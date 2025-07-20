@@ -1,7 +1,7 @@
 site_name: Hachi 的工控技術筆記
-site_url: https://hachi.github.io/dcs-learning/
-repo_url: https://github.com/hachi/dcs-learning
-repo_name: hachi/dcs-learning
+site_url: https://hachi.github.io/DCS-learning/
+repo_url: https://github.com/hachi/DCS-learning
+repo_name: hachi/DCS-learning
 
 theme:
   name: material
