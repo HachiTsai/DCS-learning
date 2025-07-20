@@ -1,0 +1,50 @@
+site_name: Hachi 的工控技術筆記
+site_url: https://hachi.github.io/dcs-learning/
+repo_url: https://github.com/hachi/dcs-learning
+repo_name: hachi/dcs-learning
+
+theme:
+  name: material
+  language: zh-TW
+  features:
+    - navigation.tabs
+    - navigation.top
+    - toc.integrate
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+nav:
+  - 👋 首頁總覽: index.md
+  - DCS 學習整理:
+      - IO List 解構: DCS/Hitachi/io-list.md
+      - 控制邏輯筆記: DCS/Hitachi/concepts.md
+      - 現場實例記錄: DCS/Hitachi/field-log.md
+      - 技術日文筆記: DCS/Hitachi/japanese.md
+  - PLC 技術:
+      - GX Works 操作筆記: PLC/MELSEC-Q.md
+  - HMI 教學:
+      - iFIX 筆記: HMI/iFIX.md
+  - 區塊鏈技術:
+      - 智能合約應用: BlockChain/SmartContract.md
+  - 資源整理:
+      - 推薦學習資源: Resources/Coursera/Learning_Schedule.md
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - toc:
+      permalink: true
+  - tables
+  - codehilite
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hachi
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/hachi-tsai

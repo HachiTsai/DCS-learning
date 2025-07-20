@@ -1,0 +1,39 @@
+title: "Hachi Tsai"
+description: "跨語言與技術的自動化旅程"
+baseurl: "" # 如果你不是放在子目錄下，保持空白
+url: "https://hachitsai.github.io"
+
+remote_theme: pages-themes/cayman@v0.2.0 # 可替換為你喜歡的主題，例如 minimal, slate, merlot 等
+plugins:
+  - jekyll-remote-theme
+  - jekyll-feed
+  - jekyll-seo-tag
+
+
+# 以下是一些自定義選項，視主題支援度而定
+author:
+  name: "Hachi Tsai"
+  email: "hachi.tsai@gmail.com"
+  github: "HachiTsai"
+
+social:
+  linkedin: "https://www.linkedin.com/in/hachitsai"
+  github: "https://github.com/HachiTsai"
+  twitter: "" # 如果沒有可以留空
+
+
+markdown: kramdown
+
+# 如果你要部落格功能，加入以下設定
+collections:
+  posts:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Hachi Tsai"
