@@ -25,7 +25,7 @@ title: Hachi 的技術筆記
 industrial-automation-learning/
 ├── README.md                  ← 專案總覽與學習目標
 ├── PLC/
-│   ├── Mitsubishi-GXWorks2.md
+│   ├── MELSEC-Q.md
 │   ├── Ladder-examples/
 │   └── PLC-projects/
 ├── HMI/
