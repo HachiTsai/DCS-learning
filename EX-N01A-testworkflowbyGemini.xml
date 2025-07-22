@@ -1,26 +1,103 @@
-<process_flow>
-  <step>
-    <from>HMI操作站</from>
-    <to>MLC-N01A 控制器</to>
-  </step>
-  <step>
-    <from>MLC-N01A 控制器</from>
-    <to>AI模組計算</to>
-  </step>
-  <step>
-    <from>AI模組計算</from>
-    <to>PID控制邏輯</to>
-  </step>
-  <step>
-    <from>PID控制邏輯</from>
-    <to>AO模組輸出</to>
-  </step>
-  <step>
-    <from>AO模組輸出</from>
-    <to>現場設備</to>
-  </step>
-  <step>
-    <from>DI／AI感測輸入</from>
-    <to>AI模組計算</to>
-  </step>
-</process_flow>
+好的，沒有問題。這是一個擴增了控制邏輯的新版本 "EX-N01A 控制流程圖"，使其更加完整與複雜。  
+
+<mxfile host="app.diagrams.net">  
+  <diagram name="EX-N01A 控制流程圖 (擴增版)" id="EX-N01A-V2">  
+    <mxGraphModel dx="1236" dy="787" grid="1" gridSize="10" guides="1" tooltips="1">  
+      <root>  
+        <mxCell id="0" />  
+        <mxCell id="1" parent="0" />  
+        
+        <!-- 操作站 -->  
+        <mxCell id="2" value="HMI操作站" style="shape=ellipse;fillColor=#dfe6e9;strokeColor=#2d3436;" vertex="1" parent="1">  
+          <mxGeometry x="80" y="200" width="120" height="60" as="geometry" />  
+        </mxCell>  
+
+        <!-- 主控制器 -->  
+        <mxCell id="3" value="MLC-N01A 控制器" style="rounded=1;fillColor=#fab1a0;strokeColor=#d35400;" vertex="1" parent="1">  
+          <mxGeometry x="250" y="200" width="150" height="60" as="geometry" />  
+        </mxCell>  
+
+        <!-- AI模組 -->  
+        <mxCell id="4" value="AI模組（計算與預測）" style="rounded=1;fillColor=#81ecec;strokeColor=#00cec9;" vertex="1" parent="1">  
+          <mxGeometry x="450" y="110" width="160" height="60" as="geometry" />  
+        </mxCell>  
+
+        <!-- PID邏輯 -->  
+        <mxCell id="5" value="PID控制邏輯" style="rounded=1;fillColor=#74b9ff;strokeColor=#0984e3;" vertex="1" parent="1">  
+          <mxGeometry x="450" y="270" width="160" height="60" as="geometry" />  
+        </mxCell>  
+        
+        <!-- 參數優化邏輯 -->  
+        <mxCell id="13" value="AI參數優化" style="shape=rhombus;fillColor=#a29bfe;strokeColor=#6c5ce7;" vertex="1" parent="1">  
+          <mxGeometry x="460" y="190" width="140" height="60" as="geometry" />  
+        </mxCell>  
+
+        <!-- AO輸出 -->  
+        <mxCell id="6" value="AO模組（輸出）" style="rounded=1;fillColor=#ffeaa7;strokeColor=#fdcb6e;" vertex="1" parent="1">  
+          <mxGeometry x="700" y="200" width="150" height="60" as="geometry" />  
+        </mxCell>  
+
+        <!-- 現場設備 -->  
+        <mxCell id="7" value="現場設備" style="shape=hexagon;fillColor=#fd79a8;strokeColor=#e84393;" vertex="1" parent="1">  
+          <mxGeometry x="900" y="200" width="120" height="60" as="geometry" />  
+        </mxCell>  
+
+        <!-- AI 模組 -->  
+        <mxCell id="14" value="AI感測器" style="shape=cylinder3;fillColor=#55efc4;strokeColor=#00b894;" vertex="1" parent="1">  
+            <mxGeometry x="900" y="320" width="120" height="60" as="geometry"/>  
+        </mxCell>  
+
+        <!-- 新增的邏輯與箭頭 -->  
+        <mxCell id="8" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#2d3436;" edge="1" parent="1" source="2" target="3">  
+          <mxGeometry relative="1" as="geometry" />  
+        </mxCell>  
+        <mxCell id="9" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#2d3436;" edge="1" parent="1" source="3" target="4">  
+          <mxGeometry relative="1" as="geometry">  
+            <mxPoint as="targetPoint" x="450" y="230"/>  
+          </mxGeometry>  
+        </mxCell>  
+        <mxCell id="10" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#2d3436;" edge="1" parent="1" source="3" target="5">  
+          <mxGeometry relative="1" as="geometry">  
+            <mxPoint as="targetPoint" x="450" y="230"/>  
+          </mxGeometry>  
+        </mxCell>  
+        <mxCell id="11" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#0984e3;" edge="1" parent="1" source="5" target="6">  
+          <mxGeometry relative="1" as="geometry" />  
+        </mxCell>  
+        <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#fdcb6e;" edge="1" parent="1" source="6" target="7">  
+          <mxGeometry relative="1" as="geometry" />  
+        </mxCell>  
+        
+        <!-- AI優化PID -->  
+        <mxCell id="15" value="優化參數" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c5ce7;" edge="1" parent="1" source="4" target="13">  
+          <mxGeometry relative="1" as="geometry" />  
+        </mxCell>  
+        <mxCell id="16" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#6c5ce7;" edge="1" parent="1" source="13" target="5">  
+          <mxGeometry relative="1" as="geometry" />  
+        </mxCell>  
+
+        <!-- 回饋迴路 -->  
+        <mxCell id="17" value="狀態回饋" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=block;strokeColor=#e84393;dashed=1;" edge="1" parent="1" source="7" target="3">  
+          <mxGeometry relative="1" as="geometry">  
+            <mxPoint x="600" y="350" as="sourcePoint"/>  
+            <mxPoint x="325" y="290" as="targetPoint"/>  
+            <Array as="points">  
+              <mxPoint x="960" y="420"/>  
+              <mxPoint x="325" y="420"/>  
+            </Array>  
+          </mxGeometry>  
+        </mxCell>  
+        <mxCell id="18" value="AI視覺/數據" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=block;strokeColor=#00b894;dashed=1;" edge="1" parent="1" source="14" target="4">  
+          <mxGeometry relative="1" as="geometry">  
+            <mxPoint x="960" y="140" as="targetPoint"/>  
+            <Array as="points">  
+              <mxPoint x="960" y="80"/>  
+              <mxPoint x="530" y="80"/>  
+            </Array>  
+          </mxGeometry>  
+        </mxCell>  
+
+      </root>  
+    </mxGraphModel>  
+  </diagram>  
+</mxfile>  
