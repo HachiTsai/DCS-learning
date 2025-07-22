@@ -1,0 +1,35 @@
+# MkDocs build output
+site/
+
+# Python cache & env
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env/
+*.venv/
+env/
+venv/
+.Python
+
+# VSCode settings
+.vscode/
+
+# macOS 系統檔案
+.DS_Store
+
+# Jupyter Notebook checkpoint
+.ipynb_checkpoints/
+
+# 測試報告與暫存資料
+*.log
+*.tmp
+
+# 匯出文件（PDF, DOCX, HTML 等）可視情況忽略
+*.pdf
+*.docx
+*.html
+
+# 其他常見檔案
+*.swp
+*.bak
