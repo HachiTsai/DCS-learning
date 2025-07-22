@@ -1,0 +1,26 @@
+<process_flow>
+  <step>
+    <from>HMI操作站</from>
+    <to>MLC-N01A 控制器</to>
+  </step>
+  <step>
+    <from>MLC-N01A 控制器</from>
+    <to>AI模組計算</to>
+  </step>
+  <step>
+    <from>AI模組計算</from>
+    <to>PID控制邏輯</to>
+  </step>
+  <step>
+    <from>PID控制邏輯</from>
+    <to>AO模組輸出</to>
+  </step>
+  <step>
+    <from>AO模組輸出</from>
+    <to>現場設備</to>
+  </step>
+  <step>
+    <from>DI／AI感測輸入</from>
+    <to>AI模組計算</to>
+  </step>
+</process_flow>
