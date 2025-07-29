@@ -59,7 +59,3 @@ extra:
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
   - javascripts/extra.js  
-
-plugins:
-  - search
-  - mermaid2
