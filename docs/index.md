@@ -3,7 +3,7 @@ layout: default
 title: Hachi 的自主學習路徑
 ---
 
-# 👋 歡迎來到我的網頁
+## 👋 歡迎來到我的網頁
 
 我是 Hachi Tsai，除了工業自動化控制外，致力學習AIML/自動化/MCP等科技工具。
 試著透過不斷Input/Output，在跨領域中持續融合所學，提昇競爭力。
@@ -17,12 +17,13 @@ title: Hachi 的自主學習路徑
 
 目前我正在學習 Python GUI 開發與 SQL 資料處理以及區塊鏈技術與知識。
 
-這是我的學習紀錄。請多指教 🙌
+## 這是我的學習紀錄。請多指教 🙌
+
 ---
 
 ## 🗂️ 學習紀錄樹狀圖
 
-```
+```mermaid
 Industrial-automation-learning/
 ├── README.md                  ← 專案總覽與學習目標
 ├── PLC/
