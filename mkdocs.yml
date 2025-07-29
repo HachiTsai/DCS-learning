@@ -38,6 +38,7 @@ markdown_extensions:
   - tables
   - codehilite
   - pymdownx.superfences
+  - pymdownx.emoji
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.tabbed
@@ -48,3 +49,4 @@ extra:
       link: https://github.com/hachi
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/hachi-tsai
+
