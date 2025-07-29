@@ -1,9 +1,4 @@
-# mermaid設定
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({ startOnLoad: true });</script>
-
-## SEQ002-E210-每一段都分開
+# SEQ002-E210-每一段都分開
 
 ```mermaid
 flowchart LR

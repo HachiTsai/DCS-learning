@@ -56,3 +56,5 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/hachi-tsai
 
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
