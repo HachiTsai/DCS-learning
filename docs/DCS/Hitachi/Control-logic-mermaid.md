@@ -47,8 +47,8 @@ flowchart LR
 ```
 
 ## 警報復歸
+
 ```mermaid
     flowchart LR
         A4[NOT-UA0251] -->|TRUE| B4[DO0037=TRUE]
 ```
-
