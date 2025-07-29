@@ -3,7 +3,7 @@ layout: default
 title: Hachi 的技術筆記
 ---
 
-# 👋 歡迎來到我的網頁
+## 👋 歡迎來到我的網頁
 
 我是 Hachi Tsai，除了工業自動化控制外，致力學習AIML/自動化/MCP等科技工具。
 接著不斷Input/Output，在跨領域中不斷融合，不有趣嗎？
@@ -15,9 +15,7 @@ title: Hachi 的技術筆記
 - 探索能源自動化與半導體設備協作
 - 🌟積極自主學習新型產業或領域專業知識
 
-
 目前我正在學習 Python GUI 開發與 SQL 資料處理以及區塊鏈技術與知識。
-
 
 這是我的學習紀錄。請多指教 🙌
 
@@ -25,7 +23,8 @@ title: Hachi 的技術筆記
 
 ## 🗂️ 學習紀錄樹狀圖
 
-```
+```mermaid
+graph TD
 Industrial-automation-learning/
 ├── README.md                  ← 專案總覽與學習目標
 ├── PLC/
