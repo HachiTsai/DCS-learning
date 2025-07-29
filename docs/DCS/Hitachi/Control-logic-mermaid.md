@@ -44,11 +44,8 @@ flowchart LR
         C4 -->|TRUE| K4[UA0251 = TRUE]
         C4 -->|FALSE| K5[UA0251 維持 FALSE]
     end
-```
 
-## 警報復歸
-
-```mermaid
-    flowchart LR
-        A4[NOT-UA0251] -->|TRUE| B4[DO0037=TRUE]
+    subgraph 警報復歸
+        K4 -->|"<font color='red' style='background-color:white;font-style:italic; font-weight:bold'>NOT UA0251=0</font>"| B4[DO0037=TRUE]
+    end
 ```
