@@ -22,7 +22,7 @@ title: Hachi 的技術筆記
 ## 🗂️ 學習紀錄樹狀圖
 
 ```
-industrial-automation-learning/
+Industrial-automation-learning/
 ├── README.md                  ← 專案總覽與學習目標
 ├── PLC/
 │   ├── MELSEC-Q.md
@@ -32,7 +32,7 @@ industrial-automation-learning/
 │   ├── iFIX.md
 │   └── Screenshots/
 ├── DCS/
-│   ├── Hitachi-EXN01A-concepts.md
+│   ├── Hitachi-EXN01A-concepts
 │   ├── System-architecture/
 │   └── Project/
 ├── Python-Automation/
