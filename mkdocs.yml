@@ -17,7 +17,7 @@ theme:
 nav:
   - 👋 首頁總覽: index.md
   - DCS 學習整理:
-      - 邏輯控制圖像化: DCS/Hitachi/control-logic-mermaid.md
+      - 邏輯控制圖像化: DCS/Hitachi/Control-logic-mermaid.md
       - 控制邏輯筆記: DCS/Hitachi/concepts.md
       - 現場實例記錄: DCS/Hitachi/field-log.md
       - 技術日文筆記: DCS/Hitachi/japanese.md
