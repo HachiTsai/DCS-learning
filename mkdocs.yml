@@ -46,7 +46,7 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:mermaid2.fence_mermaid_custom
+          format: fence_mermaid_custom
 
 
 extra:
@@ -59,3 +59,7 @@ extra:
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
   - javascripts/extra.js  
+
+plugins:
+  - search
+  - mermaid2
