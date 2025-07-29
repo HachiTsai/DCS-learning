@@ -46,7 +46,13 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: fence_mermaid_custom
+          # Mermaid 格式器使用 Python loader，VS Code 會報錯但不影響 MkDocs 運作
+          format: !!python/name:mermaid2.fence_mermaid_custom
+
+plugins:
+  - search
+  - mermaid2:
+      version: 10.4.0
 
 
 extra:
