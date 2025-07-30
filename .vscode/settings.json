@@ -1,6 +1,11 @@
 {
     "cSpell.words": [
-        "BUMPLESS"
+        "BUMPLESS",
+        "mkdocs",
+        "pycache",
+        "venv",
+        "ipynb"
+
     ],
     "yaml.customTags": [
         "!!python/name:mermaid2.fence_mermaid_custom"

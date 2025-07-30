@@ -19,7 +19,7 @@
 ./start-mkdocs.sh
 ```
 
-## 網站部署
+### 網站部署
 
 當文件內容修改完成後，執行以下指令將網站自動部署到 GitHub Pages。
 
@@ -27,7 +27,7 @@
 mkdocs gh-deploy
 ```
 
-### PowerShell 指令碼啟用失敗
+## PowerShell 指令碼啟用失敗
 
 PowerShell 指令碼啟用失敗 Debug 卡
 
@@ -37,3 +37,10 @@ plaintext
 
 在powershell下:
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+## 確保 Mermaid 插件安裝成功
+
+POWERSHELL
+-STEP1 Get-Command python
+-STEP2 pip install mkdocs-mermaid2-plugin --upgrade
+-STEP3 pip show mkdocs-mermaid2-plugin
