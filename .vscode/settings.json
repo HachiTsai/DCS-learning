@@ -18,6 +18,7 @@
         "!!python/name:mermaid2.fence_mermaid_custom"
     ],
     "cSpell.ignoreWords": [
+        "seqlist",
         "superfences"
     ]
 }

@@ -19,7 +19,7 @@ nav:
   - DCS 學習整理:
       - 邏輯控制圖像化: DCS/Hitachi/Control-logic-mermaid.md
       - 控制邏輯筆記: DCS/Hitachi/concepts.md
-      - 現場實例記錄: DCS/Hitachi/002~013.ipynb
+      - 現場實例記錄: DCS/Hitachi/seqlist.ipynb
       - 技術日文筆記: DCS/Hitachi/japanese.md
   - PLC 技術:
       - MELSEC-Q 操作筆記: PLC/MELSEC-Q.md
