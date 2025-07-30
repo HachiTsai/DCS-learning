@@ -12,7 +12,8 @@
         "mkdocs",
         "pycache",
         "pymdownx",
-        "venv"
+        "venv",
+        "zshVenv"
     ],
     "yaml.customTags": [
         "!!python/name:mermaid2.fence_mermaid_custom"
@@ -23,14 +24,15 @@
     ],
 
     "terminal.integrated.profiles.osx": {
-  "BashVenv": {
-    "path": "bash",
+    "BashVenv": {
+    "path": "zsh",
     "args": [
       "-c",
-      "source ${workspaceFolder}/.venv/bin/activate; exec bash"
+      "source ${workspaceFolder}/.venv/bin/activate; exec zsh"
     ]
   }
 },
-"terminal.integrated.defaultProfile.osx": "BashVenv"
+"terminal.integrated.defaultProfile.osx": "ZshVenv"
 }
+
 
