@@ -20,6 +20,14 @@
     "cSpell.ignoreWords": [
         "seqlist",
         "superfences"
-    ]
+    ],
+
+    "terminal.integrated.profiles.mac": {
+    "BashVenv": {
+      "path": "bash",
+      "args": ["--rcfile", "${workspaceFolder}/.venv/bin/activate"]
+    }
+  },
+  "terminal.integrated.defaultProfile.mac": "BashVenv"
 }
 
