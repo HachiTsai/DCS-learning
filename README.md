@@ -29,7 +29,7 @@ mkdocs gh-deploy
 
 ## PowerShell 指令碼啟用失敗
 
-PowerShell 指令碼啟用失敗 Debug 卡
+```PowerShell 指令碼啟用失敗 Debug 卡
 
 執行虛擬環境啟用指令時，出現如下錯誤訊息：
 plaintext
@@ -37,10 +37,19 @@ plaintext
 
 在powershell下:
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
 
 ## 確保 Mermaid 插件安裝成功
 
-POWERSHELL
--STEP1 Get-Command python
+```POWERSHELL
+-STEP1 Get-Command python 
 -STEP2 pip install mkdocs-mermaid2-plugin --upgrade
 -STEP3 pip show mkdocs-mermaid2-plugin
+-STEP4 pip list
+-STEP5 # 記得在 mkdocs.yml 加上：
+plugins:
+
+- search
+  - mermaid2:
+      version: 10.4.0
+```

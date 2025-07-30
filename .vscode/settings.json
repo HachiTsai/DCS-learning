@@ -4,8 +4,10 @@
         "mkdocs",
         "pycache",
         "venv",
-        "ipynb"
-
+        "ipynb",
+        "MELSEC",
+        "   - search",
+        "   - mermaid2"
     ],
     "yaml.customTags": [
         "!!python/name:mermaid2.fence_mermaid_custom"
