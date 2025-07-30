@@ -21,18 +21,5 @@
     "cSpell.ignoreWords": [
         "seqlist",
         "superfences"
-    ],
-
-    "terminal.integrated.profiles.osx": {
-    "BashVenv": {
-    "path": "zsh",
-    "args": [
-      "-c",
-      "source ${workspaceFolder}/.venv/bin/activate; exec zsh"
     ]
-  }
-},
-"terminal.integrated.defaultProfile.osx": "ZshVenv"
 }
-
-
