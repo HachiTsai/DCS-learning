@@ -1,16 +1,24 @@
 {
     "cSpell.words": [
+        "- mermaid2",
+        "- search",
         "BUMPLESS",
+        "codehilite",
+        "fontawesome",
+        "inlinehilite",
+        "ipynb",
+        "javascripts",
+        "MELSEC",
         "mkdocs",
         "pycache",
-        "venv",
-        "ipynb",
-        "MELSEC",
-        "   - search",
-        "   - mermaid2"
+        "pymdownx",
+        "venv"
     ],
     "yaml.customTags": [
         "!!python/name:mermaid2.fence_mermaid_custom"
+    ],
+    "cSpell.ignoreWords": [
+        "superfences"
     ]
 }
 
