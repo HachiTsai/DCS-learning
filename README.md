@@ -26,3 +26,16 @@
 ```bash
 mkdocs gh-deploy
 ```
+
+### PowerShell 指令碼啟用失敗
+
+# 🛠 PowerShell 指令碼啟用失敗 Debug 卡
+
+## 🎯 問題描述  
+
+執行虛擬環境啟用指令時，出現如下錯誤訊息：
+plaintext
+& : 因為這個系統上已停用指令碼執行，所以無法載入 ...Activate.ps1 檔案
+
+在powershell下:
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
