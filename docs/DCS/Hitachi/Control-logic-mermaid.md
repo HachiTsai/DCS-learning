@@ -1,4 +1,4 @@
-# SEQ002-E210-每一段都分開
+# EXAMPLE 1 : 工業控制場景下，生產設備間的訊號連鎖控制
 
 ```mermaid
 flowchart LR
