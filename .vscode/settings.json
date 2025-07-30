@@ -22,12 +22,15 @@
         "superfences"
     ],
 
-    "terminal.integrated.profiles.mac": {
-    "BashVenv": {
-      "path": "bash",
-      "args": ["--rcfile", "$DCS-learning/.venv/bin/activate"]
-    }
-  },
-  "terminal.integrated.defaultProfile.mac": "BashVenv"
+    "terminal.integrated.profiles.osx": {
+  "BashVenv": {
+    "path": "bash",
+    "args": [
+      "-c",
+      "source ${workspaceFolder}/.venv/bin/activate; exec bash"
+    ]
+  }
+},
+"terminal.integrated.defaultProfile.osx": "BashVenv"
 }
 
