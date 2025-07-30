@@ -52,6 +52,7 @@ markdown_extensions:
 plugins:
   - search
   - mkdocs-jupyter 
+  
   - mermaid2:
       version: 10.4.0
 
