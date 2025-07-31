@@ -51,11 +51,6 @@ markdown_extensions:
 
 plugins:
   - search
-  - mkdocs-jupyter:
-      execute: true
-      allow_errors: true
-      include_source: true
-      kernel_name: python3
   - mermaid2:
       version: 10.4.0
 
@@ -69,5 +64,5 @@ extra:
       link: https://linkedin.com/in/hachi-tsai
 
 extra_javascript:
-  - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js
-  - javascripts/extra.js  
+  - javascripts/extra.js
+  #若你有前端互動需求，才需加入 Mermaid JS - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js  
