@@ -383,11 +383,11 @@
 <article class="md-content__inner md-typeset">
 <h1 id="_1">工業控制場景下，生產設備間的訊號連鎖控制<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <h2 id="example1">EXAMPLE1<a class="headerlink" href="#example1" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>flowchart LR
+<pre class="mermaid"><code>flowchart LR
     subgraph MF01判斷
-        A1[DB0049] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C1{任一訊號為TRUE}
-        B1[DI0093] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C1
-        D1[DI0001] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C1
+        A1[DB0049] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C1{任一訊號為TRUE}
+        B1[DI0093] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C1
+        D1[DI0001] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C1
         G1[IN0101] --&gt;|TRUE| C1
         H1[IN0102] --&gt;|TRUE| C1
         I1[IN0103] --&gt;|TRUE| C1
@@ -399,8 +399,8 @@
     end
 
     subgraph MF02判斷
-        A2[DI0052] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C2
-        B2[DI0050] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C2
+        A2[DI0052] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C2
+        B2[DI0050] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C2
         G2[IN0154] --&gt;|TRUE| C2
         H2[IN0165] --&gt;|TRUE| C2
         I2[IN0166] --&gt;|TRUE| C2
@@ -428,15 +428,15 @@
     end
 
     subgraph 警報復歸
-        K4 --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT UA0251=0&lt;/font&gt;"| B4[DO0037=TRUE]
+        K4 --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT UA0251=0</font>"| B4[DO0037=TRUE]
     end
-</code></pre></div>
+</code></pre>
 <h2 id="example2">EXAMPLE2<a class="headerlink" href="#example2" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>flowchart LR
+<pre class="mermaid"><code>flowchart LR
     subgraph MF01判斷
-        A1[DB0049] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C1{任一訊號為TRUE}
-        B1[DI0093] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C1
-        D1[DI0001] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C1
+        A1[DB0049] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C1{任一訊號為TRUE}
+        B1[DI0093] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C1
+        D1[DI0001] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C1
         G1[IN0101] --&gt;|TRUE| C1
         H1[IN0102] --&gt;|TRUE| C1
         I1[IN0103] --&gt;|TRUE| C1
@@ -449,7 +449,7 @@
 
     subgraph MF02判斷
         A2[IN0110] --&gt;|TRUE| C2{任一訊號為TRUE}
-        D2[DI0036] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C2
+        D2[DI0036] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C2
         G2[IN0175] --&gt;|TRUE| C2
         C2{任一訊號為TRUE} --&gt;|TRUE| E2[MF02 = TRUE]
         C2 --&gt;|FALSE| F2[MF02 維持 FALSE]
@@ -462,9 +462,9 @@
     end
 
     subgraph 警報復歸
-        K4[UA0262] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| F4[DO0039=TRUE]
+        K4[UA0262] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| F4[DO0039=TRUE]
     end
-</code></pre></div>
+</code></pre>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
@@ -504,5 +504,7 @@
 <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
 <script src="../../../javascripts/extra.js"></script>
-</body>
+<script>window.mermaidConfig = {default: {
+    startOnLoad: false
+}};</script></body>
 </html>
