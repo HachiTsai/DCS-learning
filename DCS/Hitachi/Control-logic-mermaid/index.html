@@ -22,7 +22,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#example-1">
+<a class="md-skip" href="#_1">
           跳轉到
         </a>
 </div>
@@ -207,12 +207,41 @@
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    邏輯控制圖像化
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     邏輯控制圖像化
     
   </span>
 </a>
+<nav aria-label="目錄" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目錄
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example1">
+<span class="md-ellipsis">
+      EXAMPLE1
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example2">
+<span class="md-ellipsis">
+      EXAMPLE2
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../concepts/">
@@ -223,9 +252,9 @@
 </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../seqlist/">
+<a class="md-nav__link" href="../io-list/">
 <span class="md-ellipsis">
-    FOR-TEST-SEQ002-E210-沒有將每個模組分開的情況
+    現場實例記錄
     
   </span>
 </a>
@@ -352,7 +381,8 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="example-1">EXAMPLE 1 : 工業控制場景下，生產設備間的訊號連鎖控制<a class="headerlink" href="#example-1" title="Permanent link">¶</a></h1>
+<h1 id="_1">工業控制場景下，生產設備間的訊號連鎖控制<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<h2 id="example1">EXAMPLE1<a class="headerlink" href="#example1" title="Permanent link">¶</a></h2>
 <pre class="mermaid"><code>flowchart LR
     subgraph MF01判斷
         A1[DB0049] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C1{任一訊號為TRUE}
@@ -399,6 +429,40 @@
 
     subgraph 警報復歸
         K4 --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT UA0251=0</font>"| B4[DO0037=TRUE]
+    end
+</code></pre>
+<h2 id="example2">EXAMPLE2<a class="headerlink" href="#example2" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>flowchart LR
+    subgraph MF01判斷
+        A1[DB0049] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C1{任一訊號為TRUE}
+        B1[DI0093] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C1
+        D1[DI0001] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C1
+        G1[IN0101] --&gt;|TRUE| C1
+        H1[IN0102] --&gt;|TRUE| C1
+        I1[IN0103] --&gt;|TRUE| C1
+        L1[IN0108] --&gt;|TRUE| C1
+        J1[IN0152] --&gt;|TRUE| C1
+        K1[IN0131] --&gt;|TRUE| C1
+        C1{任一訊號為TRUE} --&gt;|TRUE| E1[MF01 = TRUE]
+        C1 --&gt;|FALSE| F1[MF01 維持 FALSE]
+    end
+
+    subgraph MF02判斷
+        A2[IN0110] --&gt;|TRUE| C2{任一訊號為TRUE}
+        D2[DI0036] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C2
+        G2[IN0175] --&gt;|TRUE| C2
+        C2{任一訊號為TRUE} --&gt;|TRUE| E2[MF02 = TRUE]
+        C2 --&gt;|FALSE| F2[MF02 維持 FALSE]
+    end
+
+    subgraph MF條件判斷
+    E1 --&gt; C4{任一MF為TRUE}
+    E2 --&gt; C4
+    C4 --&gt;|TRUE| K4[UA0262 = TRUE]    
+    end
+
+    subgraph 警報復歸
+        K4[UA0262] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| F4[DO0039=TRUE]
     end
 </code></pre>
 </article>
