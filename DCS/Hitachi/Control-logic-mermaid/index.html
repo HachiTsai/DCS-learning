@@ -435,38 +435,28 @@
     end
 </code></pre>
 <h2 id="example2">EXAMPLE2<a class="headerlink" href="#example2" title="Permanent link">¶</a></h2>
-<pre class="mermaid"><code>flowchart LR
-    subgraph MF01判斷
-        A1[DB0049] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C1{任一訊號為TRUE}
-        B1[DI0093] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C1
-        D1[DI0001] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C1
-        G1[IN0101] --&gt;|TRUE| C1
-        H1[IN0102] --&gt;|TRUE| C1
-        I1[IN0103] --&gt;|TRUE| C1
-        L1[IN0108] --&gt;|TRUE| C1
-        J1[IN0152] --&gt;|TRUE| C1
-        K1[IN0131] --&gt;|TRUE| C1
-        C1{任一訊號為TRUE} --&gt;|TRUE| E1[MF01 = TRUE]
-        C1 --&gt;|FALSE| F1[MF01 維持 FALSE]
-    end
-
-    subgraph MF02判斷
-        A2[IN0110] --&gt;|TRUE| C2{任一訊號為TRUE}
-        D2[DI0036] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C2
-        G2[IN0175] --&gt;|TRUE| C2
-        C2{任一訊號為TRUE} --&gt;|TRUE| E2[MF02 = TRUE]
-        C2 --&gt;|FALSE| F2[MF02 維持 FALSE]
-    end
-
-    subgraph MF條件判斷
-    E1 --&gt; C4{任一MF為TRUE}
-    E2 --&gt; C4
-    C4 --&gt;|TRUE| K4[UA0262 = TRUE]    
-    end
-
-    subgraph 警報復歸
-        K4[UA0262] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| F4[DO0039=TRUE]
-    end
+<pre class="mermaid"><code>    flowchart LR
+        %%第1,2個計時器%%
+        A1[DI0078] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| T1[TD0001 = TRUE<br/>Time Count Start]
+        B1[DI0079] --&gt;|TRUE| T2[TD0002 = TRUE<br/>Time Count Start]
+        T1 --&gt;|"<font color="blue" style="background-color:white;font-style:italic; font-weight:bold">TU0001<br/>CountUP</font>"| E1{任一訊號為TRUE}
+        D1[DO0046] --&gt; E1
+        E1 --&gt;E2[全部訊號為TRUE]
+        T2 --&gt;|"<font color="blue" style="background-color:white;font-style:italic; font-weight:bold">TU002<br/>CountUP</font>"| E2
+        F1[DB0049] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| E5{任一訊號為TRUE}
+        F2[DI0093] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| E5
+        F3[DI0001] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| E5
+        E5 --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| E2
+        E2 --&gt;|TRUE| E10[DO0046 = TRUE<br/>DO0047 = TRUE]
+        %%第3個計時器%%
+        G1[DI0073] --&gt;T3[TD0003 = TRUE<br/>Time Count Start]
+        T3 --&gt;|"<font color="blue" style="background-color:white;font-style:italic; font-weight:bold">TU0003<br/>CountUP</font>"| E15[全部訊號為TRUE]
+        E15 --&gt; C3[DO0048]
+        F1 --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| E13{任一訊號為TRUE}
+        F2 --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| E13
+        F3 --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| E13
+        E13 --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| E15
+        C3 --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| E20[UA0282 = TRUE]
 </code></pre>
 </article>
 </div>
