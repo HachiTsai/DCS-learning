@@ -6,20 +6,9 @@ __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
-*.env/
-*.venv/
 env/
-venv/
 .Python
-
-# VSCode settings
-.vscode/
-
-# macOS 系統檔案
-.DS_Store
-
-# Jupyter Notebook checkpoint
-.ipynb_checkpoints/
+venv/
 
 # 測試報告與暫存資料
 *.log
@@ -33,3 +22,8 @@ venv/
 # 其他常見檔案
 *.swp
 *.bak
+
+# jupyter
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*

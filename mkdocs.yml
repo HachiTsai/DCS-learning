@@ -51,9 +51,14 @@ markdown_extensions:
 
 plugins:
   - search
-  - mkdocs-jupyter 
+  - mkdocs-jupyter:
+      execute: true
+      allow_errors: true
+      include_source: true
+      kernel_name: python3
   - mermaid2:
       version: 10.4.0
+
 
 
 extra:

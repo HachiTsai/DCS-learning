@@ -12,7 +12,8 @@
         "mkdocs",
         "pycache",
         "pymdownx",
-        "venv"
+        "venv",
+        "zshVenv"
     ],
     "yaml.customTags": [
         "!!python/name:mermaid2.fence_mermaid_custom"
@@ -22,4 +23,3 @@
         "superfences"
     ]
 }
-
