@@ -6,8 +6,8 @@
 flowchart LR
     subgraph MF01判斷
         A1[DB0049] -->|NOT| C1{任一訊號為TRUE}
-        B1[DI0093] -->|"<font color='red' style='background-color:white;font-style:italic; font-weight:bold'>NOT</font>"| C1
-        D1[DI0001] -->|"<font color='red' style='background-color:white;font-style:italic; font-weight:bold'>NOT</font>"| C1
+        B1[DI0093] -->|NOT| C1
+        D1[DI0001] -->|NOT| C1
         G1[IN0101] -->|TRUE| C1
         H1[IN0102] -->|TRUE| C1
         I1[IN0103] -->|TRUE| C1
@@ -17,9 +17,9 @@ flowchart LR
         C1{任一訊號為TRUE} -->|TRUE| E1[MF01 = TRUE]
         C1 -->|FALSE| F1[MF01 維持 FALSE]
     end
-
+        linkStyle 0,1,2 color:red;
         classDef redBold fill:#fff,stroke:#f00,color:#f00,font-weight:bold,font-style:italic
-        class A1 redBold
+        class A1,B1,D1 redBold
 
     subgraph MF02判斷
         A2[DI0052] -->|"<font color='red' style='background-color:white;font-style:italic; font-weight:bold'>NOT</font>"| C2
