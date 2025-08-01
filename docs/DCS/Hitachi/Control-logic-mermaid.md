@@ -28,16 +28,15 @@ flowchart LR
     end
 
     subgraph MF02判斷
-        A2[DI0052] -->|NOT| C2
-         classDef my-red-link color:red,font-weight:bold  
-         linkStyle 9 CLASS my-red-link  
+        A2[DI0052] -->|NOT| C2        
         B2[DI0050] -->|NOT| C2
         G2[IN0154] -->|TRUE| C2
         H2[IN0165] -->|TRUE| C2
         I2[IN0166] -->|TRUE| C2
         C2{任一訊號為TRUE} -->|TRUE| E2[MF02 = TRUE]
         C2 -->|FALSE| F2[MF02 維持 FALSE]
-     
+
+
         classDef redBold fill:#fff,stroke:#f00,color:#f00,font-weight:bold,font-style:italic
         class A2,B2 redBold
     end
