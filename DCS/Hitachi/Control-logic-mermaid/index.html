@@ -15,6 +15,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../stylesheets/custom.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body dir="ltr">
@@ -385,30 +386,41 @@
 <h2 id="example1">EXAMPLE1<a class="headerlink" href="#example1" title="Permanent link">¶</a></h2>
 <pre class="mermaid"><code>flowchart LR
     subgraph MF01判斷
-        A1[DB0049] --&gt;|NOT| C1{任一訊號為TRUE}
-        B1[DI0093] --&gt;|NOT| C1
-        D1[DI0001] --&gt;|NOT| C1
+        A1[DB0049]  z1@==&gt;|"NOT"| C1{任一訊號為TRUE}
+         z1@{ animate: true}
+        B1[DI0093] z2@==&gt;|"NOT"| C1
+         z2@{ animate: true}
+        D1[DI0001] z3@==&gt;|"NOT"| C1
+         z3@{ animate: true}
+         linkStyle 0,1,2 stroke:black,font-style:italic, font-weight:bold 
         G1[IN0101] --&gt;|TRUE| C1
         H1[IN0102] --&gt;|TRUE| C1
         I1[IN0103] --&gt;|TRUE| C1
         L1[IN0108] --&gt;|TRUE| C1
         J1[IN0152] --&gt;|TRUE| C1
         K1[IN0131] --&gt;|TRUE| C1
-        C1{任一訊號為TRUE} --&gt;|TRUE| E1[MF01 = TRUE]
+         linkStyle 3,4,5,6,7,8 color:red
+        C1 --&gt;|TRUE| E1[MF01 = TRUE]
         C1 --&gt;|FALSE| F1[MF01 維持 FALSE]
-        linkStyle 0,1,2 color:red;
-        classDef redBold fill:#fff,stroke:#f00,color:#f00,font-weight:bold,font-style:italic
-        class A1,B1,D1 redBold
+         classDef redBold fill:#fff,stroke:#f00,color:#f00,font-weight:bold,font-style:italic
+         class A1,B1,D1 redBold
+         classDef whiteBold fill:#f00,stroke:#f00,color:#fff,font-weight:bold,font-style:italic
+         class C1 whiteBold
     end
 
     subgraph MF02判斷
-        A2[DI0052] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C2
-        B2[DI0050] --&gt;|"<font color="red" style="background-color:white;font-style:italic; font-weight:bold">NOT</font>"| C2
+        A2[DI0052] --&gt;|NOT| C2
+         classDef my-red-link color:red,font-weight:bold  
+         linkStyle 9 CLASS my-red-link  
+        B2[DI0050] --&gt;|NOT| C2
         G2[IN0154] --&gt;|TRUE| C2
         H2[IN0165] --&gt;|TRUE| C2
         I2[IN0166] --&gt;|TRUE| C2
         C2{任一訊號為TRUE} --&gt;|TRUE| E2[MF02 = TRUE]
         C2 --&gt;|FALSE| F2[MF02 維持 FALSE]
+
+        classDef redBold fill:#fff,stroke:#f00,color:#f00,font-weight:bold,font-style:italic
+        class A2,B2 redBold
     end
 
     subgraph MF03判斷
@@ -506,8 +518,8 @@
 <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
 <script src="../../../assets/javascripts/bundle.50899def.min.js"></script>
 <script src="../../../javascripts/extra.js"></script>
-<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
-window.mermaidConfig = {default: {
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"></script>
+<script>window.mermaidConfig = {default: {
     startOnLoad: false
 }};</script></body>
 </html>
