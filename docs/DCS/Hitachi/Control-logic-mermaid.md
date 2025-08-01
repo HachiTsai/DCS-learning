@@ -16,10 +16,10 @@ flowchart LR
         K1[IN0131] -->|TRUE| C1
         C1{任一訊號為TRUE} -->|TRUE| E1[MF01 = TRUE]
         C1 -->|FALSE| F1[MF01 維持 FALSE]
-    end
         linkStyle 0,1,2 color:red;
         classDef redBold fill:#fff,stroke:#f00,color:#f00,font-weight:bold,font-style:italic
         class A1,B1,D1 redBold
+    end
 
     subgraph MF02判斷
         A2[DI0052] -->|"<font color='red' style='background-color:white;font-style:italic; font-weight:bold'>NOT</font>"| C2
