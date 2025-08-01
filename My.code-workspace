@@ -6,5 +6,8 @@
 		{
 			"path": "../Hello-World"
 		}
-	]
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "DCS-learning"
+	}
 }

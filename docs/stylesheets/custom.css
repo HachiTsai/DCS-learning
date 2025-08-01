@@ -1,0 +1,11 @@
+/* 檔案: docs/stylesheets/custom.css */
+
+/* 範例規則：強制將特定 Mermaid 連結標籤設為紅色 */
+.my-red-link .edgeLabel {
+  color: red !important;
+}
+
+/* 您可以加入任何其他想要的全站自訂樣式 */
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}

@@ -65,4 +65,9 @@ extra:
 
 extra_javascript:
   - javascripts/extra.js
-  #若你有前端互動需求，才需加入 Mermaid JS - https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js  
+  - https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js  #若你有前端互動需求，才需加入 Mermaid JS 
+  #若你有前端互動需求，才需加入 Mermaid2 JS   - https://cdn.jsdelivr.net/npm/mermaid2@1.0.0/dist/mermaid2.min.js  
+
+# 額外載入的 CSS 檔案  
+extra_css:  
+  - stylesheets/custom.css  # <-- 加入這一行  

@@ -5,30 +5,41 @@
 ```mermaid
 flowchart LR
     subgraph MF01判斷
-        A1[DB0049] -->|NOT| C1{任一訊號為TRUE}
-        B1[DI0093] -->|NOT| C1
-        D1[DI0001] -->|NOT| C1
+        A1[DB0049]  z1@==>|"NOT"| C1{任一訊號為TRUE}
+         z1@{ animate: true}
+        B1[DI0093] z2@==>|"NOT"| C1
+         z2@{ animate: true}
+        D1[DI0001] z3@==>|"NOT"| C1
+         z3@{ animate: true}
+         linkStyle 0,1,2 stroke:black,font-style:italic, font-weight:bold 
         G1[IN0101] -->|TRUE| C1
         H1[IN0102] -->|TRUE| C1
         I1[IN0103] -->|TRUE| C1
         L1[IN0108] -->|TRUE| C1
         J1[IN0152] -->|TRUE| C1
         K1[IN0131] -->|TRUE| C1
-        C1{任一訊號為TRUE} -->|TRUE| E1[MF01 = TRUE]
+         linkStyle 3,4,5,6,7,8 color:red
+        C1 -->|TRUE| E1[MF01 = TRUE]
         C1 -->|FALSE| F1[MF01 維持 FALSE]
-        linkStyle 0,1,2 color:red;
-        classDef redBold fill:#fff,stroke:#f00,color:#f00,font-weight:bold,font-style:italic
-        class A1,B1,D1 redBold
+         classDef redBold fill:#fff,stroke:#f00,color:#f00,font-weight:bold,font-style:italic
+         class A1,B1,D1 redBold
+         classDef whiteBold fill:#f00,stroke:#f00,color:#fff,font-weight:bold,font-style:italic
+         class C1 whiteBold
     end
 
     subgraph MF02判斷
-        A2[DI0052] -->|"<font color='red' style='background-color:white;font-style:italic; font-weight:bold'>NOT</font>"| C2
-        B2[DI0050] -->|"<font color='red' style='background-color:white;font-style:italic; font-weight:bold'>NOT</font>"| C2
+        A2[DI0052] -->|NOT| C2
+         classDef my-red-link color:red,font-weight:bold  
+         linkStyle 9 CLASS my-red-link  
+        B2[DI0050] -->|NOT| C2
         G2[IN0154] -->|TRUE| C2
         H2[IN0165] -->|TRUE| C2
         I2[IN0166] -->|TRUE| C2
         C2{任一訊號為TRUE} -->|TRUE| E2[MF02 = TRUE]
         C2 -->|FALSE| F2[MF02 維持 FALSE]
+     
+        classDef redBold fill:#fff,stroke:#f00,color:#f00,font-weight:bold,font-style:italic
+        class A2,B2 redBold
     end
 
     subgraph MF03判斷
