@@ -23,7 +23,7 @@ title: Hachi 的自主學習路徑
 
 ```mermaid
 stateDiagram-v2
-    direction LR  // 方向設定為由左至右 (Left to Right)
+    direction TB  // 方向設定為由左至右 (Left to Right)
 
     %% 狀態定義 (State Definitions)
     %% 使用 state 來定義一個複合狀態 (一個大的分類)
@@ -59,10 +59,10 @@ stateDiagram-v2
     Home --> Blockchain : 探索領域
 
     %% 終點
-    Automation --> Resources
-    Programming --> Resources
-    Blockchain --> Resources
+    Automation --> Integration
+    Programming --> Integration
+    Blockchain --> Integration
     
-    Resources: 📚 資源整理
-    Resources --> [*] : 階段性完成
+    Integration: 📚 Integration
+    Integration--> [*] : 階段性完成
 ```
