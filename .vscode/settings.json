@@ -16,7 +16,9 @@
         "zshVenv"
     ],
     "yaml.customTags": [
-        "!!python/name:mermaid2.fence_mermaid_custom"
+        "!!python/name:mermaid2.fence_mermaid_custom",
+        "!!python/name:pymdownx.superfences.fence_code_format"
+
     ],
     "cSpell.ignoreWords": [
         "seqlist",

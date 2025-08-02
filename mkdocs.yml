@@ -11,6 +11,8 @@ site_author: Hachi Tsai
 
 # 主題與外觀設定
 theme:
+  fnot:
+    text: Roboto 
   name: material
   language: zh-TW # 繁體中文
   features:
@@ -34,9 +36,10 @@ theme:
         icon: material/brightness-4
         name: 切換到淺色模式
 
-#Plug-in
+# Plug-in
 plugins:
-  - optimize
+  - search
+
 
 # 導覽列設定
 nav:
