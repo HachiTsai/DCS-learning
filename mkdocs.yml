@@ -37,7 +37,7 @@ nav:
       - Python with AI-ML: Programing/python-with-aiml.md
       - Docker: Programing/docker.md
   - 資源整理:
-      - 常用工業通訊協定: 
+      - 常用工業通訊協定: Resources/OT-communicating-protocl.md
       - 推薦學習資源: Resources/Coursera/Learning_Schedule.md
 
 markdown_extensions:
