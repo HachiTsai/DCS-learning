@@ -1079,7 +1079,7 @@
 <p>這是我的學習紀錄。請多指教 🙌</p>
 <h2 id="_2">📚 學習路徑狀態圖<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <pre class="mermaid"><code>stateDiagram-v2
-    direction LR  // 方向設定為由左至右 (Left to Right)
+    direction TB  // 方向設定為由左至右 (Left to Right)
 
     %% 狀態定義 (State Definitions)
     %% 使用 state 來定義一個複合狀態 (一個大的分類)
@@ -1115,12 +1115,12 @@
     Home --&gt; Blockchain : 探索領域
 
     %% 終點
-    Automation --&gt; Resources
-    Programming --&gt; Resources
-    Blockchain --&gt; Resources
+    Automation --&gt; Integration
+    Programming --&gt; Integration
+    Blockchain --&gt; Integration
 
-    Resources: 📚 資源整理
-    Resources --&gt; [*] : 階段性完成</code></pre>
+    Integration: 📚 Integration
+    Integration--&gt; [*] : 階段性完成</code></pre>
 
 
 
