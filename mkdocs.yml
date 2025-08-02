@@ -1,11 +1,18 @@
+# ====================================================================
+#                      黃金標準版的 mkdocs.yml
+# ====================================================================
+
+# 網站基本資訊
 site_name: Hachi 的跨領域學習筆記
-site_url: https://hachi.github.io/DCS-learning/
+site_url: https://hachi.github.io/DCS-learning/ # <-- 部署到 GitHub 時請取消註解
 repo_url: https://github.com/hachi/DCS-learning
 repo_name: hachi/DCS-learning
+site_author: Hachi Tsai
 
+# 主題與外觀設定
 theme:
   name: material
-  language: zh-TW
+  language: zh-TW # 繁體中文
   features:
     - navigation.tabs
     - navigation.top
@@ -13,12 +20,25 @@ theme:
     - content.code.copy
     - search.suggest
     - search.highlight
+    - navigation.instant
+    - navigation.tracking
+  palette:
+    # 淺色模式
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: 切換到深色模式
+    # 深色模式
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: 切換到淺色模式
 
-# 額外載入的 CSS 檔案  
-extra_css:  
-  - stylesheets/custom.css  # <-- 加入這一行  
-  - stylesheets/extra.css
+#Plug-in
+plugins:
+  - optimize
 
+# 導覽列設定
 nav:
   - 👋 首頁總覽: index.md
   - 工業自動化:
@@ -40,41 +60,37 @@ nav:
       - 常用工業通訊協定: Resources/OT-communicating-protocl.md
       - 推薦學習資源: Resources/Coursera/Learning_Schedule.md
 
+# Markdown 擴充功能
 markdown_extensions:
+  - abbr
+  - attr_list  #好像跟CSS有關係的
+  - def_list   #同上
   - admonition
-  - md_in_html  # <-- 確保加上這一行 
-  - footnotes
+  - footnotes 
+  - md_in_html           # <--- 絕對關鍵！允許在 HTML 中處理 Markdown  
   - toc:
       permalink: true
   - tables
-  - codehilite
-  - pymdownx.superfences
+  - pymdownx.snippets
   - pymdownx.emoji
-  - pymdownx.highlight
+  - pymdownx.highlight:
+       line_spans: __span
   - pymdownx.inlinehilite
   - pymdownx.tabbed
+  - pymdownx.betterem
+  - pymdownx.blocks.caption
+  # Mermaid 的關鍵設定
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
-          # Mermaid 格式器使用 Python loader，VS Code 會報錯但不影響 MkDocs 運作
-          format: !!python/name:mermaid2.fence_mermaid_custom
-
-plugins:
-  - search
-  - mermaid2:
-      version: 11.9.0
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 
-
+# 社群連結
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/hachi
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/hachi-tsai
-
-extra_javascript:
-  - https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js  #若你有前端互動需求，才需加入 Mermaid JS 
-  #若你有前端互動需求，才需加入 Mermaid2 JS   - https://cdn.jsdelivr.net/npm/mermaid2@1.0.0/dist/mermaid2.min.js  
-
