@@ -5,26 +5,25 @@
 ```mermaid
 flowchart LR
     subgraph MF01判斷
-        A1[DB0049]  z1@==>|"NOT"| C1{任一訊號為TRUE}
+        A1[DB0049]  z1@==>|"NOT"| C1([任一訊號為TRUE])
          z1@{ animate: true}
         B1[DI0093] z2@==>|"NOT"| C1
          z2@{ animate: true}
         D1[DI0001] z3@==>|"NOT"| C1
          z3@{ animate: true}
-         linkStyle 0,1,2 stroke:black,font-style:italic, font-weight:bold 
+         linkStyle 0,1,2 stroke:red,font-style:italic, font-weight:bold, color:#f00
         G1[IN0101] -->|TRUE| C1
         H1[IN0102] -->|TRUE| C1
         I1[IN0103] -->|TRUE| C1
         L1[IN0108] -->|TRUE| C1
         J1[IN0152] -->|TRUE| C1
         K1[IN0131] -->|TRUE| C1
-         linkStyle 3,4,5,6,7,8 color:red
         C1 -->|TRUE| E1[MF01 = TRUE]
         C1 -->|FALSE| F1[MF01 維持 FALSE]
          classDef redBold fill:#fff,stroke:#f00,color:#f00,font-weight:bold,font-style:italic
          class A1,B1,D1 redBold
-         classDef whiteBold fill:#f00,stroke:#f00,color:#fff,font-weight:bold,font-style:italic
-         class C1 whiteBold
+         classDef GreenBold fill:#0f0,stroke:#f00,color:#fff,font-weight:bold,font-style:italic
+         class C1 GreenBold
     end
 
     subgraph MF02判斷
