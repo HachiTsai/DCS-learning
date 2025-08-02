@@ -36,9 +36,9 @@ Industrial-automation-learning/
 │   │    ├──MELSEC-Q 
 │   │    └── Screensho/
 │   │
-│   ├──HMI/
-│   │    ├── iFIX
-│   │    └── Screenshots/
+│   └── HMI/
+│        ├── iFIX
+│        └── Screenshots/
 │
 ├── BLOCKCHAIN/
 │   ├── Smart-Contract/

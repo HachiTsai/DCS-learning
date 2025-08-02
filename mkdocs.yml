@@ -32,7 +32,12 @@ nav:
           - iFIX 筆記: HMI/iFIX.md
   - 區塊鏈技術:
       - 智能合約應用: BlockChain/SmartContract.md
+  - PROGRAMING:
+      - GitHub: Programing/github.md
+      - Python with AI-ML: Programing/python-with-aiml.md
+      - Docker: Programing/docker.md
   - 資源整理:
+      - 常用工業通訊協定: 
       - 推薦學習資源: Resources/Coursera/Learning_Schedule.md
 
 markdown_extensions:
