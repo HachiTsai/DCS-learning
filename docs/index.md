@@ -26,26 +26,28 @@ title: Hachi 的自主學習路徑
 ```mermaid
 Industrial-automation-learning/
 ├── README.md                  ← 專案總覽與學習目標
-├── PLC/
-│   ├── MELSEC-Q
-│   ├── Ladder-examples/
-│   └── PLC-projects/
-├── HMI/
-│   ├── iFIX.md
-│   └── Screenshots/
-├── DCS/
-│   ├── Hitachi-EXN01A-concepts
-│   ├── System-architecture/
-│   └── Project/
-├── Python-Automation/
-│   ├── Learning-Note/
-│   ├── Modbus-simulator
-│   └── OPC-UA-client
+├── 工業自動化
+│   ├── DCS控制系統與Mermaid/
+│   │    ├── 產線控制圖像化
+│   │    ├── 控制系統邏輯筆記
+│   │    └──  技術日文筆記     
+│   │
+│   ├── PLC/
+│   │    ├──MELSEC-Q 
+│   │    └── Screensho/
+│   │
+│   ├──HMI/
+│   │    ├── iFIX
+│   │    └── Screenshots/
 │
 ├── BLOCKCHAIN/
 │   ├── Smart-Contract/
 │   └── Tracking-Zone
 │
+├── PROGRAMING  
+│   ├── Github
+│   ├── Python with AI-ML/
+│   └── Docker
 │
 │
 └── Resources/
