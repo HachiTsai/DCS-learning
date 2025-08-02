@@ -32,6 +32,7 @@ nav:
 
 markdown_extensions:
   - admonition
+  - md_in_html  # <-- 確保加上這一行 
   - footnotes
   - toc:
       permalink: true
@@ -64,7 +65,6 @@ extra:
       link: https://linkedin.com/in/hachi-tsai
 
 extra_javascript:
-  - javascripts/extra.js
   - https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js  #若你有前端互動需求，才需加入 Mermaid JS 
   #若你有前端互動需求，才需加入 Mermaid2 JS   - https://cdn.jsdelivr.net/npm/mermaid2@1.0.0/dist/mermaid2.min.js  
 

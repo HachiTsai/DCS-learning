@@ -3,7 +3,7 @@
 ## EXAMPLE1
 
 ```mermaid
-flowchart LR
+graph LR
     subgraph MF01判斷
         A1[DB0049]  z1@==>|"NOT"| C1([任一訊號為TRUE])
          z1@{ animate: true}
@@ -11,7 +11,7 @@ flowchart LR
          z2@{ animate: true}
         D1[DI0001] z3@==>|"NOT"| C1
          z3@{ animate: true}
-         linkStyle 0,1,2 stroke:red,font-style:italic, font-weight:bold, color:#f00
+         linkStyle 0,1,2 stroke:red,font-style:italic, font-weight:bold
         G1[IN0101] -->|TRUE| C1
         H1[IN0102] -->|TRUE| C1
         I1[IN0103] -->|TRUE| C1
@@ -20,7 +20,7 @@ flowchart LR
         K1[IN0131] -->|TRUE| C1
         C1 -->|TRUE| E1[MF01 = TRUE]
         C1 -->|FALSE| F1[MF01 維持 FALSE]
-         classDef redBold fill:#fff,stroke:#f00,color:#f00,font-weight:bold,font-style:italic
+         classDef redBold fill:#fff,stroke:blue,color:white,font-weight:bold,font-style:italic
          class A1,B1,D1 redBold
          classDef GreenBold fill:#0f0,stroke:#f00,color:#fff,font-weight:bold,font-style:italic
          class C1 GreenBold
