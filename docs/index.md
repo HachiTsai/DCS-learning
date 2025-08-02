@@ -24,28 +24,28 @@ title: Hachi 的自主學習路徑
 ## 🗂️ 學習紀錄心智圖
 
 ```mermaid  
-mindmap  root((Industrial-automation-learning))  
-      README
+mindmap  root((Learning-MAP))  
+             (README) :::mm-cat-green
 
-    (工業自動化)  
-      DCS控制系統與Mermaid/  
-        產線控制圖像化  
-        控制系統邏輯筆記  
-        技術日文筆記  
-      PLC/  
-        MELSEC-Q  
-        Screensho/  
-      HMI/  
-        iFIX  
-        Screenshots/  
-    BLOCKCHAIN/  
-      Smart-Contract/  
-      Tracking-Zone  
-    PROGRAMING  
-      Github  
-      Python with AI-ML/  
-      Docker  
-    Resources/  
-      工控常用通訊協定  
-      推薦學習資源  
+             (工業自動化)  
+               DCS控制系統與Mermaid/  
+               產線控制圖像化  
+               控制系統邏輯筆記  
+               技術日文筆記  
+            PLC/  
+               MELSEC-Q  
+               Screenshot/  
+            HMI/  
+               iFIX  
+               Screenshots/  
+            BLOCKCHAIN/  
+               Smart-Contract/  
+               Tracking-Zone  
+            PROGRAMING  
+               Github  
+               Python with AI-ML/  
+               Docker  
+            Resources/  
+               工控常用通訊協定  
+               推薦學習資源  
 ```  

@@ -63,12 +63,7 @@ markdown_extensions:
 plugins:
   - search
   - mermaid2:
-      version: 10.4.0
-      arguments:
-        theme: default
-        config:
-          flowchart:
-            defaultRenderer: "elk"
+      version: 11.9.0
 
 
 
@@ -82,5 +77,4 @@ extra:
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js  #若你有前端互動需求，才需加入 Mermaid JS 
   #若你有前端互動需求，才需加入 Mermaid2 JS   - https://cdn.jsdelivr.net/npm/mermaid2@1.0.0/dist/mermaid2.min.js  
-
 
