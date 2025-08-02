@@ -4,16 +4,17 @@
 
 /* 為所有心智圖節點設定一個預設的柔和背景色和圓角 */
 .mermaid .mindmap-node {
-  background-color: #f0f4f8; /* 淡藍灰色背景 */
+  background-color: #041e39; /* 淡藍灰色背景 */
   border-radius: 8px;
+  color:#041e39
 }
 
 /* --- 自訂顏色類別 --- */
 
 /* 主要分類 (藍色) */
 .mm-cat-blue .mindmap-node-shape {
-  background: #dbeafe !important;  /* 背景色 */
-  stroke: #60a5fa !important;    /* 邊框顏色 */
+  background: #fee8db !important;  /* 背景色 */
+  stroke: #eef4fb !important;    /* 邊框顏色 */
   stroke-width: 2px;
 }
 .mm-cat-blue .mindmap-node-label {
