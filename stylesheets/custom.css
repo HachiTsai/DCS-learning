@@ -1,18 +1,2 @@
 /* 檔案：docs/stylesheets/custom.css */
 
-/* 針對使用 'my-red-link' class 的連結，修改其內部標籤的顏色 */
-.my-red-link .edgeLabel .label {
-  color: white !important;
-  fill: red !important; /* SVG 中有時需要用 fill */
-}
-
-/* 同時修改它的字體粗細 */
-.my-red-link .edgeLabel {
-  font-weight: bold !important;
-}
-
-
-/* 您可以加入任何其他想要的全站自訂樣式 */
-body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-}
