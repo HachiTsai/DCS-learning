@@ -17,52 +17,19 @@ title: Hachi 的自主學習路徑
 
 目前我正在學習 Python GUI 開發與 SQL 資料處理以及區塊鏈技術與知識。
 
-這是我的學習紀錄。請多指教 🙌
-
-## 📚 學習路徑狀態圖
+## 這是我的學習紀錄。請多指教 🙌
 
 ```mermaid
-stateDiagram-v2
-    direction TB  // 方向設定為由左至右 (Left to Right)
-
-    %% 狀態定義 (State Definitions)
-    %% 使用 state 來定義一個複合狀態 (一個大的分類)
-
-    state "🏭 工業自動化" as Automation {
-        DCS: DCS控制系統與Mermaid
-        PLC: PLC 技術 (MELSEC-Q)
-        HMI: HMI 教學 (iFIX)
-
-        DCS --> PLC : 學習路徑
-        PLC --> HMI : 學習路徑
-    }
-
-    state "💻 PROGRAMING" as Programming {
-        GitHub: 版本控制
-        Python: Python with AI/ML
-        Docker: 容器化技術
-
-        GitHub --> Python
-        Python --> Docker
-    }
-
-    state "🔗 區塊鏈技術" as Blockchain {
-        SmartContract: 智能合約應用
-    }
-    
-    %% 起點與主要流程
-    [*] --> Home : 開始學習
-
-    Home : 👋 首頁總覽 (README.md)
-    Home --> Automation : 深入研究
-    Home --> Programming : 深入研究
-    Home --> Blockchain : 探索領域
-
-    %% 終點
-    Automation --> Integration
-    Programming --> Integration
-    Blockchain --> Integration
-    
-    Integration: 📚 Integration
-    Integration--> [*] : 階段性完成
+flowchart LR
+        A1[DB0049] -->|"<font color='red' style='background-color:white;font-style:italic; font-weight:bold'>NOT</font>"| C1{任一訊號為TRUE}
+        B1[DI0093] -->|"<font color='red' style='background-color:white;font-style:italic; font-weight:bold'>NOT</font>"| C1
+        D1[DI0001] -->|"<font color='red' style='background-color:white;font-style:italic; font-weight:bold'>NOT</font>"| C1
+        G1[IN0101] -->|TRUE| C1
+        H1[IN0102] -->|TRUE| C1
+        I1[IN0103] -->|TRUE| C1
+        L1[IN0108] -->|TRUE| C1
+        J1[IN0152] -->|TRUE| C1
+        K1[IN0131] -->|TRUE| C1
+        C1{任一訊號為TRUE} -->|TRUE| E1[MF01 = TRUE]
+        C1 -->|FALSE| F1[MF01 維持 FALSE]
 ```

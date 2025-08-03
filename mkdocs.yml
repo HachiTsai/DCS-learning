@@ -39,6 +39,14 @@ theme:
 # Plug-in
 plugins:
   - search
+  - mermaid2:
+      version: 11.5.0
+      arguments:
+        theme: 'base'
+        themeVariables:
+          primaryColor: '#FCF3CF'
+          primaryTextColor: '#EF6C00'
+
 
 
 # 導覽列設定
@@ -92,6 +100,7 @@ markdown_extensions:
 
 # 社群連結
 extra:
+  mermaid: false
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/hachi
