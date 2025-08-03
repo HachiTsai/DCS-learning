@@ -17,7 +17,6 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
@@ -252,27 +251,6 @@
     </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mf01">
-<span class="md-ellipsis">
-      MF01
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#_2">
-<span class="md-ellipsis">
-      連鎖警報
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mf02">
-<span class="md-ellipsis">
-      MF02
-    </span>
-</a>
-</li>
 </ul>
 </nav>
 </li>
@@ -461,10 +439,11 @@
 <article class="md-content__inner md-typeset">
 <h1 id="_1">工業控制場景下，生產設備間的訊號連鎖控制<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <h2 id="example1">EXAMPLE1<a class="headerlink" href="#example1" title="Permanent link">¶</a></h2>
-<pre class="mermaid"><code>flowchart LR
-classDef redBold fill:#fff,stroke:red, font-weight:bold,font-style:italic, color: #fff000
-classDef GreenBold fill:#0f0,stroke:black,font-weight:bold,font-style:italic, color: #0f00f0
+<pre class="mermaid"><code>%%{init:{ "theme":"base" }}%%
+flowchart LR
     subgraph MF01判斷
+    classDef redBold fill:#fff,stroke:red, font-weight:bold,font-style:italic
+    classDef GreenBold fill:#0f0,stroke: #ff0ff0,font-weight:bold,font-style:italic
         A1[DB0049] --&gt;|&lt;font color='red'&gt;NOT&lt;/font&gt;| C1(((任一訊號為TRUE)))
         B1[DI0093] --&gt;|NOT| C1
         D1[DI0001] --&gt;|NOT| C1 
@@ -481,7 +460,7 @@ classDef GreenBold fill:#0f0,stroke:black,font-weight:bold,font-style:italic, co
         class A1,B1,D1 redBold
         class C1 GreenBold
 
-            linkStyle 0,1,2 stroke:red,font-style:italic, font-weight:bold, color:red
+            linkStyle 0,1,2 stroke:red,font-style:italic, font-weight:bold
     end
 
     subgraph MF02判斷
@@ -521,48 +500,12 @@ classDef GreenBold fill:#0f0,stroke:black,font-weight:bold,font-style:italic, co
     end
 
     subgraph 警報復歸
-        K4 --&gt;|***NOT***| B4[UA0251=0]
+        K4 z31@==&gt;|***NOT***| B4[UA0251=0]
+           z31@{ animate: true}
         B4 --&gt; B10[DI0037=TRUE]
 
         linkStyle 31 stroke:red,font-style:italic, font-weight:bold 
     end</code></pre>
-<h2 id="mf01">MF01<a class="headerlink" href="#mf01" title="Permanent link">¶</a></h2>
-<pre class="mermaid"><code>flowchart LR
-        A1[DB0049] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C1{任一訊號為TRUE}
-        B1[DI0093] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C1
-        D1[DI0001] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C1
-        G1[IN0101] --&gt;|TRUE| C1
-        H1[IN0102] --&gt;|TRUE| C1
-        I1[IN0103] --&gt;|TRUE| C1
-        L1[IN0108] --&gt;|TRUE| C1
-        M1[IN0109] --&gt;|TRUE| C1
-        J1[IN0152] --&gt;|TRUE| C1
-        K1[IN0131] --&gt;|TRUE| C1
-        C1{任一訊號為TRUE} --&gt;|TRUE| E1[MF01 = TRUE]
-        C1 --&gt;|FALSE| F1[MF01 維持 FALSE]</code></pre>
-<h2 id="_2">連鎖警報<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<pre class="mermaid"><code>flowchart LR
-        A2[DI0069] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C3[訊號同時為TRUE]
-        G2[IN0302] --&gt;|TRUE| C3
-        C3 --&gt;|TRUE| E3[UA0069 = TRUE]
-        style C3 fill:#fff,stroke:#333,stroke-width:1px,color:#0000ff
-
-        A4[IN0302] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C4[訊號同時為TRUE]
-        G4[IN0125] --&gt;|TRUE| C4
-        C4 --&gt;|TRUE| E4[UA0125 = TRUE]
-        style C4 fill:#fff,stroke:#333,stroke-width:1px,color:#0000ff</code></pre>
-<h2 id="mf02">MF02<a class="headerlink" href="#mf02" title="Permanent link">¶</a></h2>
-<pre class="mermaid"><code>flowchart LR
-        A5[IN0150] --&gt;|TRUE| C5{任一訊號為TRUE}
-        B5[UA0069] --&gt;|TRUE| C5
-        D5[UA0125] --&gt;|TRUE| C5
-        G5[IN0130] --&gt;|TRUE| C5
-        H5[IN0143] --&gt;|TRUE| C5
-        I5[IN0133] --&gt;|TRUE| C5
-        J5[IN0132] --&gt;|TRUE| C5
-        K5[DI0045] --&gt;|"&lt;font color='red' style='background-color:white;font-style:italic; font-weight:bold'&gt;NOT&lt;/font&gt;"| C5
-        C5 --&gt;|TRUE| E5[MF02 = TRUE]
-        C5 --&gt;|FALSE| F5[MF02 維持 FALSE]</code></pre>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
