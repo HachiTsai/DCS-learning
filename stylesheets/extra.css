@@ -1,0 +1,36 @@
+/* --------------------------------------------
+   RedBold 節點樣式
+---------------------------------------------*/
+.mermaid .redBold rect {
+  fill:  #fff   !important;
+  stroke: red   !important;
+}
+.mermaid .redBold text {
+  fill:          #fff000 !important;
+  font-weight:   bold    !important;
+  font-style:    italic  !important;
+}
+
+/* --------------------------------------------
+   GreenBold 節點樣式
+---------------------------------------------*/
+.mermaid .greenBold rect {
+  fill:  #0f0     !important;
+  stroke: black  !important;
+}
+.mermaid .greenBold text {
+  fill:          #000fff !important;
+  font-weight:   bold      !important;
+  font-style:    italic    !important;
+}
+
+/* --------------------------------------------
+   如果要同樣在邊線上套用 class
+   Mermaid 會產生 <path class="edgeClass"> 
+---------------------------------------------*/
+.mermaid .redBold.edgeClass,
+.mermaid .edgeClass.redBold {
+  stroke: red     !important;
+  stroke-width: 2 !important;
+  /* 若要文字顏色，可再對 .label 做選擇器 */
+}
