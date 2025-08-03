@@ -105,7 +105,3 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/hachi-tsai
 
-# CSS
-extra_css:
-  - stylesheets/extra.css
-
