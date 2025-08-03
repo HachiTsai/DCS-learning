@@ -4,13 +4,10 @@
 
 ```mermaid
 flowchart LR
-classDef redBold fill:#fff,stroke:red, font-weight:bold,font-style:italic, color: #fff000
-classDef GreenBold fill:#0f0,stroke:black,font-weight:bold,font-style:italic, color:#fff
     subgraph MF01判斷
-        A1[DB0049]  z1@==>|NOT| C1(((任一訊號為TRUE)))
-        B1[DI0093] z2@==>|NOT| C1
-        D1[DI0001] z3@==>|NOT| C1 
-        linkStyle 0,1,2 stroke:red,font-style:italic, font-weight:bold, label-color:red
+        A1[DB0049] -->|<font color='red'>NOT</font>| C1(((任一訊號為TRUE)))
+        B1[DI0093] -->|NOT| C1
+        D1[DI0001] -->|NOT| C1 
 
         G1[IN0101] -->|TRUE| C1
         H1[IN0102] -->|TRUE| C1
@@ -21,12 +18,10 @@ classDef GreenBold fill:#0f0,stroke:black,font-weight:bold,font-style:italic, co
         C1 -->|TRUE| E1[MF01 = TRUE]
         C1 -->|FALSE| F1[MF01 維持 FALSE]
         
-        z1@{ animate: true}
-        z2@{ animate: true}
-        z3@{ animate: true}
-
          class A1,B1,D1 redBold
          class C1 GreenBold
+
+            linkStyle 0,1,2 stroke:red,font-style:italic, font-weight:bold, color:red
     end
 
     subgraph MF02判斷

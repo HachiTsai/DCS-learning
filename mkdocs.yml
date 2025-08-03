@@ -46,6 +46,9 @@ plugins:
         themeVariables:
           primaryColor: '#FCF3CF'
           primaryTextColor: '#EF6C00'
+# CSS
+extra_css:
+  - stylesheets/extra.css
 
 
 
