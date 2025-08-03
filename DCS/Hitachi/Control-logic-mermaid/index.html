@@ -476,15 +476,15 @@
         C1 --&gt;|TRUE| E1[MF01 = TRUE]
         C1 --&gt;|FALSE| F1[MF01 維持 FALSE]
 
-         class A1,B1,D1 redBold
-         class C1 GreenBold
+        class A1,B1,D1 redBold
+        class C1 greenBold
 
             linkStyle 0,1,2 stroke:red,font-style:italic, font-weight:bold, color:red
     end
 
     subgraph MF02判斷
-        A2[DI0052] z11@==&gt;|***NOT***| C2     
-        B2[DI0050] z12@==&gt;|***NOT***| C2
+        A2[DI0052] --&gt;|***NOT***| C2     
+        B2[DI0050] --&gt;|***NOT***| C2
         linkStyle 11,12 stroke:red,font-style:italic, font-weight:bold
 
         G2[IN0154] --&gt;|TRUE| C2
@@ -492,10 +492,8 @@
         I2[IN0166] --&gt;|TRUE| C2
         C2(((任一訊號為TRUE))) --&gt;|TRUE| E2[MF02 = TRUE]
         C2 --&gt;|FALSE| F2[MF02 維持 FALSE]
-        z11@{ animate: true}
-        z12@{ animate: true}
-        class C2 GreenBold
 
+        class C2 GreenBold
         class A2,B2 redBold
     end
 
@@ -521,9 +519,8 @@
     end
 
     subgraph 警報復歸
-        K4 z31@==&gt;|***NOT***| B4[UA0251=0]
+        K4 --&gt;|***NOT***| B4[UA0251=0]
         B4 --&gt; B10[DI0037=TRUE]
-        z31@{ animate: true}
 
         linkStyle 31 stroke:red,font-style:italic, font-weight:bold 
     end</code></pre>
