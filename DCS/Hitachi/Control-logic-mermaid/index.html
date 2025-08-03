@@ -461,11 +461,13 @@
 <h1 id="_1">工業控制場景下，生產設備間的訊號連鎖控制<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <h2 id="example1">EXAMPLE1<a class="headerlink" href="#example1" title="Permanent link">¶</a></h2>
 <pre class="mermaid"><code>flowchart LR
+classDef redBold fill:#fff,stroke:red, font-weight:bold,font-style:italic, color: #fff000
+classDef GreenBold fill:#0f0,stroke:black,font-weight:bold,font-style:italic, color:#fff
     subgraph MF01判斷
         A1[DB0049]  z1@==&gt;|NOT| C1(((任一訊號為TRUE)))
         B1[DI0093] z2@==&gt;|NOT| C1
-        D1[DI0001] z3@==&gt;|NOT| C1
-        linkStyle 0,1,2 stroke:red,font-style:italic, font-weight:bold, color:red
+        D1[DI0001] z3@==&gt;|NOT| C1 
+        linkStyle 0,1,2 stroke:red,font-style:italic, font-weight:bold, label-color:red
 
         G1[IN0101] --&gt;|TRUE| C1
         H1[IN0102] --&gt;|TRUE| C1
@@ -480,10 +482,8 @@
         z2@{ animate: true}
         z3@{ animate: true}
 
-        classDef redBold font-color:red, fill:#fff,stroke:white, font-weight:bold,font-style:italic
-        classDef GreenBold fill:#0f0,stroke:black,font-weight:bold,font-style:italic, color:#fff
-        class A1,B1,D1 redBold
-        class C1 GreenBold
+         class A1,B1,D1 redBold
+         class C1 GreenBold
     end
 
     subgraph MF02判斷
@@ -500,7 +500,6 @@
         z12@{ animate: true}
         class C2 GreenBold
 
-        classDef redBold fill:#fff,stroke:#f00,color:#f00,font-weight:bold,font-style:italic
         class A2,B2 redBold
     end
 
