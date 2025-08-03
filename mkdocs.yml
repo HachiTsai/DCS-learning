@@ -11,7 +11,7 @@ site_author: Hachi Tsai
 
 # 主題與外觀設定
 theme:
-  fnot:
+  font:
     text: Roboto 
   name: material
   language: zh-TW # 繁體中文
@@ -46,11 +46,6 @@ plugins:
         themeVariables:
           primaryColor: '#FCF3CF'
           primaryTextColor: '#EF6C00'
-# CSS
-extra_css:
-  - stylesheets/extra.css
-
-
 
 # 導覽列設定
 nav:
@@ -109,3 +104,8 @@ extra:
       link: https://github.com/hachi
     - icon: fontawesome/brands/linkedin
       link: https://linkedin.com/in/hachi-tsai
+
+# CSS
+extra_css:
+  - stylesheets/extra.css
+

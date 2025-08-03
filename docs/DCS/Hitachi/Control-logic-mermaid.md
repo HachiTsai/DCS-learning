@@ -4,6 +4,8 @@
 
 ```mermaid
 flowchart LR
+classDef redBold fill:#fff,stroke:red, font-weight:bold,font-style:italic, color: #fff000
+classDef GreenBold fill:#0f0,stroke:black,font-weight:bold,font-style:italic, color: #0f00f0
     subgraph MF01判斷
         A1[DB0049] -->|<font color='red'>NOT</font>| C1(((任一訊號為TRUE)))
         B1[DI0093] -->|NOT| C1
@@ -18,15 +20,15 @@ flowchart LR
         C1 -->|TRUE| E1[MF01 = TRUE]
         C1 -->|FALSE| F1[MF01 維持 FALSE]
         
-         class A1,B1,D1 redBold
-         class C1 GreenBold
+        class A1,B1,D1 redBold
+        class C1 GreenBold
 
             linkStyle 0,1,2 stroke:red,font-style:italic, font-weight:bold, color:red
     end
 
     subgraph MF02判斷
-        A2[DI0052] z11@==>|***NOT***| C2     
-        B2[DI0050] z12@==>|***NOT***| C2
+        A2[DI0052] -->|***NOT***| C2     
+        B2[DI0050] -->|***NOT***| C2
         linkStyle 11,12 stroke:red,font-style:italic, font-weight:bold
         
         G2[IN0154] -->|TRUE| C2
@@ -34,10 +36,8 @@ flowchart LR
         I2[IN0166] -->|TRUE| C2
         C2(((任一訊號為TRUE))) -->|TRUE| E2[MF02 = TRUE]
         C2 -->|FALSE| F2[MF02 維持 FALSE]
-        z11@{ animate: true}
-        z12@{ animate: true}
-        class C2 GreenBold
 
+        class C2 GreenBold
         class A2,B2 redBold
     end
 
@@ -63,9 +63,8 @@ flowchart LR
     end
 
     subgraph 警報復歸
-        K4 z31@==>|***NOT***| B4[UA0251=0]
+        K4 -->|***NOT***| B4[UA0251=0]
         B4 --> B10[DI0037=TRUE]
-        z31@{ animate: true}
         
         linkStyle 31 stroke:red,font-style:italic, font-weight:bold 
     end
