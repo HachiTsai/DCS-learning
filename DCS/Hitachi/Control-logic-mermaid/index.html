@@ -462,6 +462,8 @@
 <h1 id="_1">工業控制場景下，生產設備間的訊號連鎖控制<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <h2 id="example1">EXAMPLE1<a class="headerlink" href="#example1" title="Permanent link">¶</a></h2>
 <pre class="mermaid"><code>flowchart LR
+classDef redBold fill:#fff,stroke:red, font-weight:bold,font-style:italic, color: #fff000
+classDef GreenBold fill:#0f0,stroke:black,font-weight:bold,font-style:italic, color: #0f00f0
     subgraph MF01判斷
         A1[DB0049] --&gt;|&lt;font color='red'&gt;NOT&lt;/font&gt;| C1(((任一訊號為TRUE)))
         B1[DI0093] --&gt;|NOT| C1
@@ -477,7 +479,7 @@
         C1 --&gt;|FALSE| F1[MF01 維持 FALSE]
 
         class A1,B1,D1 redBold
-        class C1 greenBold
+        class C1 GreenBold
 
             linkStyle 0,1,2 stroke:red,font-style:italic, font-weight:bold, color:red
     end
