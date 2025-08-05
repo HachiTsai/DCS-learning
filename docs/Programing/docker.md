@@ -2,16 +2,47 @@
 
 ```mermaid
 flowchart TD
-  A[📁 建立本地 Git Repo: Docker] --> B[✏️ 撰寫 Dockerfile <br> requirements.txt]
-  B --> C[🔧 建立 Buildx builder: my-builder]
-  C --> D[⚙️ 初始化 builder: bootstrap]
-  D --> E[🛠️ 使用 buildx 建構 image: mylab1]
-  E --> F{📦 支援平台}
-  F --> F1[linux/amd64]
-  F --> F2[linux/arm64]
-  F1 & F2 --> G[🧪 測試 docker run 本地執行]
-  G --> H[🔐 登入 Docker Hub]
-  H --> I[🚀 推送 Image 至 hachitsai/mylab1]
+        A[📁 建立本地 Git Repo: Docker] --> B[✏️ 撰寫 Dockerfile <br> requirements.txt]
+        B --> C[🔧 建立 Buildx builder: my-builder]
+        C --> D[⚙️ 初始化 builder: bootstrap]
+        D --> E[🛠️ 使用 buildx 建構 image: mylab1]
+        E --> F{📦 支援平台}
+        F --> F1[linux/amd64]
+        F --> F2[linux/arm64]
+        F1 & F2 --> G[🧪 測試 docker run 本地執行]
+        G --> H[🔐 登入 Docker Hub]
+        H --> I[🚀 推送 Image 至 hachitsai/mylab1]
+```
+
+```mermaid
+classDiagram
+  %% 指定方向：水平排列 (Mermaid v11+ 支援 direction)
+  direction LR
+
+  class Dockerfile {
+    FROM python:3.12-slim
+    WORKDIR /app
+    COPY . .
+    RUN pip install ...
+    CMD ["python", "main.py"]
+  }
+
+  class Requirements {
+    numpy==1.26.4
+    pandas==2.2.2
+    flask==3.0.3
+    matplotlib==3.8.4
+    scikit-learn==1.4.2
+    tensorflow==2.15.0
+  }
+
+  class BuildCommand {
+    cd Docker
+    docker buildx build --platform linux/amd64,linux/arm64
+    -t hachitsai/mylab1:tag
+    --push .
+  }
+
 ```
 
 
