@@ -24,6 +24,9 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
+<a class="md-skip" href="#docker">
+          跳轉到
+        </a>
 </div>
 <div data-md-component="announce">
 </div>
@@ -412,7 +415,126 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Docker</h1>
+<h1 id="docker">DOCKER跨平台架構與鏡像建構流程圖<a class="headerlink" href="#docker" title="Permanent link">¶</a></h1>
+<pre class="mermaid"><code>flowchart TD
+  A[📁 建立本地 Git Repo: Docker] --&gt; B[✏️ 撰寫 Dockerfile &lt;br&gt; requirements.txt]
+  B --&gt; C[🔧 建立 Buildx builder: my-builder]
+  C --&gt; D[⚙️ 初始化 builder: bootstrap]
+  D --&gt; E[🛠️ 使用 buildx 建構 image: mylab1]
+  E --&gt; F{📦 支援平台}
+  F --&gt; F1[linux/amd64]
+  F --&gt; F2[linux/arm64]
+  F1 &amp; F2 --&gt; G[🧪 測試 docker run 本地執行]
+  G --&gt; H[🔐 登入 Docker Hub]
+  H --&gt; I[🚀 推送 Image 至 hachitsai/mylab1]</code></pre>
+<h1 id="_1">技術建構流程摘要<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
+<table>
+<thead>
+<tr>
+<th>節點</th>
+<th>指令／動作</th>
+<th>說明／用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>建立資料夾、初始化 Git repo</td>
+<td>建立本地專案環境</td>
+</tr>
+<tr>
+<td>B</td>
+<td>撰寫 Dockerfile，使用 <code>python:3.12-slim</code>（搭配 requirements.txt）</td>
+<td>建構基礎 Image</td>
+</tr>
+<tr>
+<td>C</td>
+<td><code>docker buildx create --name my-builder --use</code></td>
+<td>建立並啟用 Builder</td>
+</tr>
+<tr>
+<td>D</td>
+<td><code>docker buildx inspect --bootstrap</code></td>
+<td>初始化 Builder</td>
+</tr>
+<tr>
+<td>E</td>
+<td><code>docker buildx build --platform linux/amd64,linux/arm64 -t hachitsai/mylab1:latest --push .</code></td>
+<td>多平台建構並推送 Image</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Buildx 支援指定平台（Mac M1 → arm64、Linux x86 → amd64）</td>
+<td>設定支援平台</td>
+</tr>
+<tr>
+<td>G</td>
+<td><code>docker run --rm hachitsai/mylab1:latest</code></td>
+<td>本地執行測試</td>
+</tr>
+<tr>
+<td>H</td>
+<td><code>docker login</code></td>
+<td>登入 Docker Hub</td>
+</tr>
+<tr>
+<td>I</td>
+<td><code>docker push hachitsai/mylab1:latest</code> 或建構時直接 <code>--push</code></td>
+<td>發佈 Image 到 Docker Hub</td>
+</tr>
+</tbody>
+</table>
+<h1 id="docker_1">Docker 維運與管理項目<a class="headerlink" href="#docker_1" title="Permanent link">¶</a></h1>
+<table>
+<thead>
+<tr>
+<th>類型</th>
+<th>指令／動作</th>
+<th>用途說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ 執行</td>
+<td><code>docker run --rm filename:version</code></td>
+<td>即時執行 Image 並刪除容器</td>
+</tr>
+<tr>
+<td>🔁 拉取</td>
+<td><code>docker pull hachitsai/filename:version</code></td>
+<td>在其他機器上拉取並使用 Image</td>
+</tr>
+<tr>
+<td>🧭 檢查</td>
+<td><code>docker buildx ls</code></td>
+<td>檢查目前使用中的 builder 與支援平台</td>
+</tr>
+<tr>
+<td>🗑️ 清理</td>
+<td><code>docker buildx rm my-builder</code></td>
+<td>移除指定 builder（結束專案或重建用途）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">備註區<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<h3 id="1">*1<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
+<p>FROM python:3.12-slim<br/>
+WORKDIR /app<br/>
+COPY . .<br/>
+RUN pip install --no-cache-dir -r requirements.txt<br/>
+CMD ["python", "main.py"]  </p>
+<h3 id="2">*2<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
+<p>numpy==1.26.4<br/>
+pandas==2.2.2<br/>
+flask==3.0.3<br/>
+matplotlib==3.8.4<br/>
+scikit-learn==1.4.2<br/>
+tensorflow==2.15.0  </p>
+<h3 id="3">*3<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
+<p>cd Docker<br/>
+docker buildx build --platform linux/amd64,linux/arm64 \<br/>
+  -t hachitsai/mylab1:tag \<br/>
+  --push .  </p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
