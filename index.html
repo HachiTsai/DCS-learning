@@ -456,7 +456,7 @@
 <li>探索能源自動化與半導體設備協作</li>
 <li>🌟積極自主學習新型產業或領域專業知識</li>
 </ul>
-<p>目前我正在學習 Python GUI 開發與 SQL 資料處理以及區塊鏈技術與知識。 {.my-color}</p>
+<p>目前我正在學習 Python GUI 開發與 SQL 資料處理以及區塊鏈技術與知識。</p>
 <h2 id="_2">這是我的學習紀錄。請多指教 🙌<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
 <pre class="mermaid"><code>classDiagram 
     note for OT "Core Technologies"
@@ -464,7 +464,7 @@
         &lt;&lt;abstract&gt;&gt;
         + Who I am 
     }
-    class OT {
+    class OT:::red {
         &lt;&lt;module&gt;&gt;
         + DCS控制系統與Mermaid
         + PLC 技術
@@ -496,6 +496,12 @@
     首頁總覽 &lt;|-- 資源整理
 
     classDef default fill: #ffffff,stroke: #000000,stroke-width:2px,color:red
+</code></pre>
+<pre class="mermaid"><code>classDiagram
+classDef clearStyle fill:#FCF3CF,stroke:#333,stroke-width:2px;
+class ClearNode clearStyle
+ClearNode : +connect()
+ClearNode : -data
 </code></pre>
 </article>
 </div>
@@ -534,5 +540,6 @@
 </div>
 <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.top", "toc.integrate", "content.code.copy", "search.suggest", "search.highlight", "navigation.instant", "navigation.tracking"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u8907\u88fd", "clipboard.copy": "\u8907\u88fd", "search.result.more.one": "\u6b64\u9801\u5c1a\u6709 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.more.other": "\u6b64\u9801\u5c1a\u6709 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.none": "\u6c92\u6709\u7b26\u5408\u7684\u9805\u76ee", "search.result.one": "\u627e\u5230 1 \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.other": "\u627e\u5230 # \u500b\u7b26\u5408\u7684\u9805\u76ee", "search.result.placeholder": "\u6253\u5b57\u9032\u884c\u641c\u5c0b", "search.result.term.missing": "\u7f3a\u5c11\u5b57\u8a5e", "select.version": "\u9078\u64c7\u7248\u672c"}, "version": null}</script>
 <script src="assets/javascripts/bundle.50899def.min.js"></script>
+<script src="js/force-mermaid-color.js"></script>
 </body>
 </html>

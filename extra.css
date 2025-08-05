@@ -1,3 +1,15 @@
 .my-color {
   color: #FCF3CF;
 }
+
+.mermaid .label {
+  color: inherit !important;
+}
+
+.mermaid text {
+  fill: #333333 !important; /* 或你想用的奶油橘 */
+}
+
+.mermaid svg text {
+  fill: #333333 !important;
+}
