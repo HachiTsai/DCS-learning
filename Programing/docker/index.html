@@ -417,16 +417,16 @@
 <article class="md-content__inner md-typeset">
 <h1 id="docker">DOCKER跨平台架構與鏡像建構流程圖<a class="headerlink" href="#docker" title="Permanent link">¶</a></h1>
 <pre class="mermaid"><code>flowchart TD
-  A[📁 建立本地 Git Repo: Docker] --&gt; B[✏️ 撰寫 Dockerfile &lt;br&gt; requirements.txt]
-  B --&gt; C[🔧 建立 Buildx builder: my-builder]
-  C --&gt; D[⚙️ 初始化 builder: bootstrap]
-  D --&gt; E[🛠️ 使用 buildx 建構 image: mylab1]
-  E --&gt; F{📦 支援平台}
-  F --&gt; F1[linux/amd64]
-  F --&gt; F2[linux/arm64]
-  F1 &amp; F2 --&gt; G[🧪 測試 docker run 本地執行]
-  G --&gt; H[🔐 登入 Docker Hub]
-  H --&gt; I[🚀 推送 Image 至 hachitsai/mylab1]</code></pre>
+        A[📁 建立本地 Git Repo: Docker] --&gt; B[✏️ 撰寫 Dockerfile &lt;br&gt; requirements.txt]
+        B --&gt; C[🔧 建立 Buildx builder: my-builder]
+        C --&gt; D[⚙️ 初始化 builder: bootstrap]
+        D --&gt; E[🛠️ 使用 buildx 建構 image: mylab1]
+        E --&gt; F{📦 支援平台}
+        F --&gt; F1[linux/amd64]
+        F --&gt; F2[linux/arm64]
+        F1 &amp; F2 --&gt; G[🧪 測試 docker run 本地執行]
+        G --&gt; H[🔐 登入 Docker Hub]
+        H --&gt; I[🚀 推送 Image 至 hachitsai/mylab1]</code></pre>
 <h1 id="_1">技術建構流程摘要<a class="headerlink" href="#_1" title="Permanent link">¶</a></h1>
 <table>
 <thead>
@@ -516,25 +516,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_2">備註區<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<h3 id="1">*1<a class="headerlink" href="#1" title="Permanent link">¶</a></h3>
-<p>FROM python:3.12-slim<br/>
-WORKDIR /app<br/>
-COPY . .<br/>
-RUN pip install --no-cache-dir -r requirements.txt<br/>
-CMD ["python", "main.py"]  </p>
-<h3 id="2">*2<a class="headerlink" href="#2" title="Permanent link">¶</a></h3>
-<p>numpy==1.26.4<br/>
-pandas==2.2.2<br/>
-flask==3.0.3<br/>
-matplotlib==3.8.4<br/>
-scikit-learn==1.4.2<br/>
-tensorflow==2.15.0  </p>
-<h3 id="3">*3<a class="headerlink" href="#3" title="Permanent link">¶</a></h3>
-<p>cd Docker<br/>
-docker buildx build --platform linux/amd64,linux/arm64 \<br/>
-  -t hachitsai/mylab1:tag \<br/>
-  --push .  </p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
