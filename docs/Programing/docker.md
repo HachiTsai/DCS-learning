@@ -14,37 +14,6 @@ flowchart TD
         H --> I[🚀 推送 Image 至 hachitsai/mylab1]
 ```
 
-```mermaid
-classDiagram
-  %% 指定方向：水平排列 (Mermaid v11+ 支援 direction)
-  direction LR
-
-  class Dockerfile {
-    FROM python:3.12-slim
-    WORKDIR /app
-    COPY . .
-    RUN pip install ...
-    CMD ["python", "main.py"]
-  }
-
-  class Requirements {
-    numpy==1.26.4
-    pandas==2.2.2
-    flask==3.0.3
-    matplotlib==3.8.4
-    scikit-learn==1.4.2
-    tensorflow==2.15.0
-  }
-
-  class BuildCommand {
-    cd Docker
-    docker buildx build --platform linux/amd64,linux/arm64
-    -t hachitsai/mylab1:tag
-    --push .
-  }
-
-```
-
 
 # 技術建構流程摘要
 
@@ -69,25 +38,3 @@ classDiagram
 | 🔁 拉取 | `docker pull hachitsai/filename:version` | 在其他機器上拉取並使用 Image     |
 | 🧭 檢查 | `docker buildx ls`                 | 檢查目前使用中的 builder 與支援平台  |
 | 🗑️ 清理 | `docker buildx rm my-builder`      | 移除指定 builder（結束專案或重建用途） |
-
-
-## 備註區
-### *1
-FROM python:3.12-slim  
-WORKDIR /app  
-COPY . .  
-RUN pip install --no-cache-dir -r requirements.txt  
-CMD ["python", "main.py"]  
-### *2
-numpy==1.26.4  
-pandas==2.2.2  
-flask==3.0.3  
-matplotlib==3.8.4  
-scikit-learn==1.4.2  
-tensorflow==2.15.0  
-### *3
-cd Docker  
-docker buildx build --platform linux/amd64,linux/arm64 \  
-  -t hachitsai/mylab1:tag \  
-  --push .  
-
