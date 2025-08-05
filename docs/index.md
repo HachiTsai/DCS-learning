@@ -19,17 +19,27 @@ title: Hachi 的自主學習路徑
 
 ## 這是我的學習紀錄。請多指教 🙌
 
-```mermaid
-flowchart LR
-        A1[DB0049] -->|"<font color='red' style='background-color:white;font-style:italic; font-weight:bold'>NOT</font>"| C1{任一訊號為TRUE}
-        B1[DI0093] -->|"<font color='red' style='background-color:white;font-style:italic; font-weight:bold'>NOT</font>"| C1
-        D1[DI0001] -->|"<font color='red' style='background-color:white;font-style:italic; font-weight:bold'>NOT</font>"| C1
-        G1[IN0101] -->|TRUE| C1
-        H1[IN0102] -->|TRUE| C1
-        I1[IN0103] -->|TRUE| C1
-        L1[IN0108] -->|TRUE| C1
-        J1[IN0152] -->|TRUE| C1
-        K1[IN0131] -->|TRUE| C1
-        C1{任一訊號為TRUE} -->|TRUE| E1[MF01 = TRUE]
-        C1 -->|FALSE| F1[MF01 維持 FALSE]
-```
+首頁總覽
+│
+├── 工業自動化
+│   ├── DCS控制系統與Mermaid
+│   │   ├── 邏輯控制圖像化
+│   │   ├── 控制邏輯筆記
+│   │   └── 技術日文筆記
+│   ├── PLC 技術
+│   │   └── MELSEC-Q 操作筆記
+│   └── HMI 教學
+│       └── iFIX 筆記
+│
+├── 區塊鏈技術
+│   └── 智能合約應用
+│
+├── PROGRAMING
+│   ├── GitHub
+│   ├── Python with AI-ML
+│   └── Docker
+│
+└── 資源整理
+    ├── 常用工業通訊協定
+    └── 推薦學習資源
+
