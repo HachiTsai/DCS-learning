@@ -53,3 +53,6 @@ plugins:
   - mermaid2:
       version: 10.4.0
 ```
+
+## 下載主題
+pip install mkdocs-windmill-theme

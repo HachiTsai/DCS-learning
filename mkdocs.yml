@@ -47,6 +47,7 @@ plugins:
           primaryColor: '#FCF3CF'
           primaryTextColor: '#EF6C00'
 
+
 # 導覽列設定
 nav:
   - 👋 首頁總覽: index.md
@@ -98,7 +99,7 @@ markdown_extensions:
 
 # 社群連結
 extra:
-  mermaid: false
+  mermaid: 'false'
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/hachi

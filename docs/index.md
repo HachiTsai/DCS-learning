@@ -20,27 +20,43 @@ title: Hachi 的自主學習路徑
 ## 這是我的學習紀錄。請多指教 🙌
 
 ```mermaid
-首頁總覽
-│
-├── 工業自動化
-│   ├── DCS控制系統與Mermaid
-│   │   ├── 邏輯控制圖像化
-│   │   ├── 控制邏輯筆記
-│   │   └── 技術日文筆記
-│   ├── PLC 技術
-│   │   └── MELSEC-Q 操作筆記
-│   └── HMI 教學
-│       └── iFIX 筆記
-│
-├── 區塊鏈技術
-│   └── 智能合約應用
-│
-├── PROGRAMING
-│   ├── GitHub
-│   ├── Python with AI-ML
-│   └── Docker
-│
-└── 資源整理
-    ├── 常用工業通訊協定
-    └── 推薦學習資源
+classDiagram 
+    note for OT "Core Technologies"
+    class 首頁總覽 {
+        <<abstract>>
+        + Who I am 
+    }
+    class OT:::red {
+        <<module>>
+        + DCS控制系統與Mermaid
+        + PLC 技術
+        + HMI 教學
+    }
+
+    class 區塊鏈技術 {
+        <<module>>
+        + 智能合約應用
+    }
+
+    class PROGRAMING {
+        <<module>>
+        + GitHub
+        + Python with AI-ML
+        + Docker
+        + SQL
+    }
+
+    class 資源整理 {
+        <<module>>
+        + 常用工業通訊協定
+        + 推薦學習資源
+    }
+
+    首頁總覽 <|-- OT
+    首頁總覽 <|-- 區塊鏈技術
+    首頁總覽 <|-- PROGRAMING
+    首頁總覽 <|-- 資源整理
+
+    classDef default fill: #ffffff,stroke: #000000,stroke-width:2px,color:red
+
 ```
