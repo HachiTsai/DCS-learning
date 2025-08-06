@@ -8,7 +8,7 @@ __pycache__/
 *.pyd
 env/
 .Python
-.venv/
+.venv
 *.sqlite3
 *.egg-info/
 
