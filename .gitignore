@@ -8,7 +8,9 @@ __pycache__/
 *.pyd
 env/
 .Python
-venv/
+.venv/
+*.sqlite3
+*.egg-info/
 
 # 測試報告與暫存資料
 *.log
