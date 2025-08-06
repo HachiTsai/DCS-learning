@@ -1,4 +1,6 @@
 {
+     "python.envFile": "${workspaceFolder}/.env"
+     ,
     "cSpell.words": [
         "- mermaid2",
         "- search",
