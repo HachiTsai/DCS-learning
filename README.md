@@ -1,5 +1,11 @@
 # DCS-learning
 
+---
+
+## 在DOCKER有建立submodule
+
+---
+
 ## 專案啟動說明
 
 本專案使用 MkDocs 建立，請根據您的作業系統選擇對應的腳本來啟動開發環境。
