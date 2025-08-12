@@ -23,5 +23,7 @@
     "cSpell.ignoreWords": [
         "seqlist",
         "superfences"
-    ]
+    ],
+    "yaml.validate": false
+
 }
