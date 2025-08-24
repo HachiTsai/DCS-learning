@@ -219,6 +219,13 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      📚 學習路徑狀態圖
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -465,45 +472,50 @@
 </ul>
 <p>目前我正在學習 Python GUI 開發與 SQL 資料處理以及區塊鏈技術與知識。</p>
 <h2 id="_2">這是我的學習紀錄。請多指教 🙌<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
-<pre class="mermaid"><code>classDiagram 
-    note for OT "Core Technologies"
-    class 首頁總覽 {
-        &lt;&lt;abstract&gt;&gt;
-        + Who I am 
-    }
-    class OT:::red {
-        &lt;&lt;module&gt;&gt;
-        + DCS控制系統與Mermaid
-        + PLC 技術
-        + HMI 教學
-    }
+<h2 id="_3">📚 學習路徑狀態圖<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<pre class="mermaid"><code>stateDiagram-v2
+    direction TB  // 方向設定為由左至右 (Left to Right)
 
-    class 區塊鏈技術 {
-        &lt;&lt;module&gt;&gt;
-        + 智能合約應用
+    %% 狀態定義 (State Definitions)
+    %% 使用 state 來定義一個複合狀態 (一個大的分類)
+
+    state "🏭 工業自動化" as Automation {
+        DCS: DCS控制系統與Mermaid
+        PLC: PLC 技術 (MELSEC-Q)
+        HMI: HMI 教學 (iFIX)
+
+        DCS --&gt; PLC : 學習路徑
+        PLC --&gt; HMI : 學習路徑
     }
 
-    class PROGRAMING {
-        &lt;&lt;module&gt;&gt;
-        + GitHub
-        + Python with AI-ML
-        + Docker
-        + SQL
+    state "💻 PROGRAMING" as Programming {
+        GitHub: 版本控制
+        Python: Python with AI/ML
+        Docker: 容器化技術
+
+        GitHub --&gt; Python
+        Python --&gt; Docker
     }
 
-    class 資源整理 {
-        &lt;&lt;module&gt;&gt;
-        + 常用工業通訊協定
-        + 推薦學習資源
+    state "🔗 區塊鏈技術" as Blockchain {
+        SmartContract: 智能合約應用
     }
 
-    首頁總覽 &lt;|-- OT
-    首頁總覽 &lt;|-- 區塊鏈技術
-    首頁總覽 &lt;|-- PROGRAMING
-    首頁總覽 &lt;|-- 資源整理
+    %% 起點與主要流程
+    [*] --&gt; Home : 開始學習
 
-    classDef default fill: #ffffff,stroke: #000000,stroke-width:2px,color:red
-</code></pre>
+    Home : 👋 首頁總覽 (README.md)
+    Home --&gt; Automation : 深入研究
+    Home --&gt; Programming : 深入研究
+    Home --&gt; Blockchain : 探索領域
+
+    %% 終點
+    Automation --&gt; Integration
+    Programming --&gt; Integration
+    Blockchain --&gt; Integration
+
+    Integration: 📚 Integration
+    Integration--&gt; [*] : 階段性完成</code></pre>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
