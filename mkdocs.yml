@@ -4,9 +4,9 @@
 
 # 網站基本資訊
 site_name: Hachi 的跨領域學習筆記
-site_url: https://hachi.github.io/DCS-learning/ # <-- 部署到 GitHub 時請取消註解
-repo_url: https://github.com/hachi/DCS-learning
-repo_name: hachi/DCS-learning
+site_url: https://hachi.github.io/Hachi-Roadmap/ # <-- 部署到 GitHub 時請取消註解
+repo_url: https://github.com/hachi/Hachi-Roadmap
+repo_name: hachi/Hachi-Roadmap
 site_author: Hachi Tsai
 
 # 主題與外觀設定
@@ -66,6 +66,7 @@ nav:
       - GitHub: Programing/github.md
       - Python with AI-ML: Programing/python-with-aiml.md
       - Docker: Programing/docker.md
+      - Mkdocs: Programing/mkdocs.md
   - 資源整理:
       - 常用工業通訊協定: Resources/OT-communicating-protocl.md
       - 推薦學習資源: Resources/Coursera/Learning_Schedule.md

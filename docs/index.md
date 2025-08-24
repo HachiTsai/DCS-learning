@@ -19,44 +19,50 @@ title: Hachi 的自主學習路徑
 
 ## 這是我的學習紀錄。請多指教 🙌
 
+## 📚 學習路徑狀態圖
+
 ```mermaid
-classDiagram 
-    note for OT "Core Technologies"
-    class 首頁總覽 {
-        <<abstract>>
-        + Who I am 
-    }
-    class OT:::red {
-        <<module>>
-        + DCS控制系統與Mermaid
-        + PLC 技術
-        + HMI 教學
-    }
+stateDiagram-v2
+    direction TB  // 方向設定為由左至右 (Left to Right)
 
-    class 區塊鏈技術 {
-        <<module>>
-        + 智能合約應用
+    %% 狀態定義 (State Definitions)
+    %% 使用 state 來定義一個複合狀態 (一個大的分類)
+
+    state "🏭 工業自動化" as Automation {
+        DCS: DCS控制系統與Mermaid
+        PLC: PLC 技術 (MELSEC-Q)
+        HMI: HMI 教學 (iFIX)
+
+        DCS --> PLC : 學習路徑
+        PLC --> HMI : 學習路徑
     }
 
-    class PROGRAMING {
-        <<module>>
-        + GitHub
-        + Python with AI-ML
-        + Docker
-        + SQL
+    state "💻 PROGRAMING" as Programming {
+        GitHub: 版本控制
+        Python: Python with AI/ML
+        Docker: 容器化技術
+
+        GitHub --> Python
+        Python --> Docker
     }
 
-    class 資源整理 {
-        <<module>>
-        + 常用工業通訊協定
-        + 推薦學習資源
+    state "🔗 區塊鏈技術" as Blockchain {
+        SmartContract: 智能合約應用
     }
+    
+    %% 起點與主要流程
+    [*] --> Home : 開始學習
 
-    首頁總覽 <|-- OT
-    首頁總覽 <|-- 區塊鏈技術
-    首頁總覽 <|-- PROGRAMING
-    首頁總覽 <|-- 資源整理
+    Home : 👋 首頁總覽 (README.md)
+    Home --> Automation : 深入研究
+    Home --> Programming : 深入研究
+    Home --> Blockchain : 探索領域
 
-    classDef default fill: #ffffff,stroke: #000000,stroke-width:2px,color:red
-
+    %% 終點
+    Automation --> Integration
+    Programming --> Integration
+    Blockchain --> Integration
+    
+    Integration: 📚 Integration
+    Integration--> [*] : 階段性完成
 ```
