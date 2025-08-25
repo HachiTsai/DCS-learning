@@ -34,14 +34,12 @@ stateDiagram-v2
     }  
 
     state "🎨 設定與擴充" as Config {  
-        EditConfig: Edit mkdocs.yml  
+        EditConfig: "Check"mkdocs.yml  
         InstallTheme: pip install mkdocs-material  
         InstallPlugin: pip install mkdocs-mermaid2-plugin  
-        EnablePlugin: plugins - mermaid2  
 
         EditConfig --> InstallTheme :Build Environment  
         InstallTheme --> InstallPlugin : Install plugin
-        InstallPlugin --> EnablePlugin : Install plugin
     }  
 
     state "🚀 開發與預覽" as Dev {  
