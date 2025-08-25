@@ -484,14 +484,12 @@
     }  
 
     state "🎨 設定與擴充" as Config {  
-        EditConfig: Edit mkdocs.yml  
+        EditConfig: "Check"mkdocs.yml  
         InstallTheme: pip install mkdocs-material  
         InstallPlugin: pip install mkdocs-mermaid2-plugin  
-        EnablePlugin: plugins - mermaid2  
 
         EditConfig --&gt; InstallTheme :Build Environment  
         InstallTheme --&gt; InstallPlugin : Install plugin
-        InstallPlugin --&gt; EnablePlugin : Install plugin
     }  
 
     state "🚀 開發與預覽" as Dev {  
