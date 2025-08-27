@@ -8,8 +8,8 @@ flowchart LR
     subgraph MF01判斷
     classDef redBold fill:#fff,stroke:red, font-weight:bold,font-style:italic
     classDef GreenBold fill:#0f0,stroke: #ff0ff0,font-weight:bold,font-style:italic
-        A1[DB0049] -->|<font color='red'>NOT</font>| C1(((任一訊號為TRUE)))
-        B1[DI0093] -->|NOT| C1
+        A1[DB0049] -->|<span style="color: red; font-size: 16px;">NOT</span>| C1(((任一訊號為TRUE)))
+        B1[DI0093] -->|<span style="color: red; font-size: 16px;">NOT</span>| C1
         D1[DI0001] -->|NOT| C1 
 
         G1[IN0101] -->|TRUE| C1
