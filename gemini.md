@@ -14,7 +14,16 @@
 - **圖表工具:** `Mermaid.js` (在 Markdown 中以 ` ```mermaid ` 語法塊嵌入)
 - **部署平台:** `GitHub Pages`
 
-## 3. 工作流程與慣例 (Workflows & Conventions)
+## 3. 常用指令 (Common Commands)
+
+*（請您補充或修改）*
+
+```zsh
+# 範例：啟動 Conda 環境
+# conda activate myenv-mac
+```
+
+## 4. 工作流程與慣例 (Workflows & Conventions)
 
 - **溝通語言:** 請使用 **繁體中文 (Traditional Chinese)** 與我溝通。
 - **新增/修改內容:**
@@ -27,7 +36,7 @@
 - **圖表繪製:**
   - 當需要繪製流程圖、時序圖等圖表時，請使用 Mermaid 語法。
 
-## 4. 程式碼風格與規範 (Coding Style & Conventions)
+## 5. 程式碼風格與規範 (Coding Style & Conventions)
 
 *（請您補充或修改）*
 
@@ -37,7 +46,7 @@
 - 每次提案 commit message 時，都會將大約 20 字以內的精簡敘述放在主旨行之後，空一行，作為內文的第一行。並用英文在內文中詳細說明變更內容。
 - 必須總是先向您提案 commit message 的內容，並在獲得您的同意後才能提交。
 
-## 5. 使用者偏好 (User Preferences)
+## 6. 使用者偏好 (User Preferences)
 
 - **語言:** 使用者偏好使用**繁體中文**進行所有互動。
 - **分析風格:** 使用者偏好詳細且專業的分析，並透過表格進行可視化說明。
