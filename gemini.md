@@ -42,11 +42,29 @@
 
 - Python 程式碼盡量遵循 **PEP 8** 風格。
 - Git commit message 遵循 **Conventional Commits** 格式。
-- 在未來每次執行 git commit 前，我必須先執行 git add . 來加入所有變更，git diff HEAD 或 --staged 來檢查 staged 的變更。
-- 每次提案 commit message 時，都會將大約 20 字以內的精簡敘述放在主旨行之後，空一行，作為內文的第一行。並用英文在內文中詳細說明變更內容。
-- 必須總是先向您提案 commit message 的內容，並在獲得您的同意後才能提交。
 
 ## 6. 使用者偏好 (User Preferences)
 
 - **語言:** 使用者偏好使用**繁體中文**進行所有互動。
 - **分析風格:** 使用者偏好詳細且專業的分析，並透過表格進行可視化說明。
+
+---
+
+## 7. 自動化指令區 (Automation Commands)
+
+### 7.1 版本控制 (Version Control)
+
+- **觸發指令:** `請開始git add .`
+- **執行流程:**
+    1. 執行 `git add .` 來加入所有變更。
+    2. 執行 `git diff HEAD` 或 `git diff --staged` 來檢查變更。
+    3. 草擬 Commit Message 並向您提案。格式將遵循 Conventional Commits，內文第一行為約 20 字的**繁體中文**精簡敘述，後續以英文詳述。
+    4. 獲得您的同意後，才會執行 `git commit`。
+    5. 確定 `git commit` 成功執行後，將自動 `git push` 推送到遠端倉庫。
+
+### 7.2 筆記與內容 (Notes & Content)
+
+- **觸發指令:** `請做成筆記`
+- **執行流程:**
+  - 代表希望我將前 5 次的回覆內容儲存成一個 Markdown (.md) 檔案。
+  - 我會主動詢問使用者期望的檔名與儲存路徑，或建議一個合理的預設值。
