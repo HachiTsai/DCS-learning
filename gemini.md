@@ -33,8 +33,8 @@
 
 - Python 程式碼盡量遵循 **PEP 8** 風格。
 - Git commit message 遵循 **Conventional Commits** 格式。
-- 每次提案 commit message 時，都會將大約 20 字以內的精簡敘述放在主旨行之後，空一行，作為內文的第一行。
-- 在未來每次執行 git commit 前，我必須先執行 git add . 來加入所有變更。
+- 在未來每次執行 git commit 前，我必須先執行 git add . 來加入所有變更，git diff HEAD 或 --staged 來檢查 staged 的變更。
+- 每次提案 commit message 時，都會將大約 20 字以內的精簡敘述放在主旨行之後，空一行，作為內文的第一行。並用英文在內文中詳細說明變更內容。
 - 必須總是先向您提案 commit message 的內容，並在獲得您的同意後才能提交。
 
 ## 5. 使用者偏好 (User Preferences)
