@@ -57,7 +57,7 @@
 - **觸發指令:** `請開始git add .`
 - **執行流程:**
     1. 執行 `git add .` 來加入所有變更。
-    2. 執行 `git diff HEAD` 或 `git diff --staged` 來檢查變更。
+    2. 執行 `git diff --stat` 來檢視變更統計。
     3. 草擬 Commit Message 並向您提案。格式將遵循 Conventional Commits，內文第一行為約 20 字的**繁體中文**精簡敘述，後續以英文詳述。
     4. 獲得您的同意後，才會執行 `git commit`。
     5. 確定 `git commit` 成功執行後，將自動 `git push` 推送到遠端倉庫。
